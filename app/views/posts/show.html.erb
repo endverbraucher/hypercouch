@@ -1,0 +1,5 @@
+<% if @post.url %>
+	<%= render :partial => "shared/link", :locals => { :post => @post } %>
+<% else %>
+	<%= render :partial => "shared/article", :locals => { :post => @post } %>
+<% end %>

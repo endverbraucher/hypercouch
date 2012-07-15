@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>slog.io - Backend</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= stylesheet_link_tag    "backend/application" %>
+    <%= auto_discovery_link_tag :atom, feed_path %>
+    <%= csrf_meta_tags %>
+</head>
+<body>
+	
+	<div class="container-fluid">		
+		<div class="row-fluid">			
+			<div class="span2 sidebar">
+		        <div class="logo btn-toolbar">
+					<div class="row-fluid">
+						<%= link_to image_tag("slogo_small.png", width: "80px"), backend_root_url %>
+					</div>
+					
+					<% if session[:user_id] %>            
+		            <div class="btn-group">
+		              <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+		                <%= session[:user_id] %>
+		                <span class="caret"></span>
+		              </a>
+		              <ul class="dropdown-menu">
+						  <li><%= link_to "show slog", root_url, target: "_blank" %></li>
+  						  <li class="divider"></li>
+						  <li><%= link_to "slog out", logout_url %></li>
+		              </ul>
+		            </div>
+					<% end %>					
+		        </div>
+			</div>
+			
+	        <div class="span10">
+	            <%= yield %>
+	        </div>		
+		</div>		
+	</div>
+	
+    <footer class="span12">
+        <h3>"I'm living like there's no tomorrow, because there isn't one."   <small>Don Draper.</small></h3>
+    </footer>
+
+    <%= javascript_include_tag "backend/application" %>
+	
+</body>
+</html>

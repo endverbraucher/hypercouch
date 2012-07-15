@@ -1,0 +1,34 @@
+# OS X
+#
+# Desktop Service Store files
+# See: http://en.wikipedia.org/wiki/.DS_Store
+.DS_Store
+
+# TextMate
+*.tmproj
+
+# Configuration
+.rvmrc
+.powenv
+config/couchdb.yml
+
+# Ruby on Rails
+*.rbc
+*.sassc
+.sass-cache
+capybara-*.html
+.rspec
+/.bundle
+/vendor/bundle
+/log/*
+/tmp/*
+/db/*.sqlite3
+/public/system/*
+/coverage/
+/spec/tmp/*
+**.orig
+rerun.txt
+pickle-email-*.html
+.routes
+public/*.html
+public/*.atom

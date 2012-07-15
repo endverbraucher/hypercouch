@@ -1,0 +1,136 @@
+@import "mixins.css.less";
+
+body {
+	.openSans;
+	background: #fff;
+}
+
+.sidebar {
+	text-align: center;
+		
+	.btn-group {
+		margin-left: 1em;
+		margin-top: 1em;
+		text-align: left;
+	}
+}
+
+footer {
+	margin: 2em 0;
+	padding-left: 17%;
+}
+
+#ideas {
+	
+	h1 {
+		.openSansExtraBold;
+		padding: 15px;
+	}
+	
+	#idea_form {
+		padding: .2em 15px;		
+		
+		div {margin:0;}
+	
+		#post_title {
+			font-size: 1.6em;
+			font-weight: lighter;
+			color: #000;
+			height: 1.4em;
+			line-height: 1.4em;
+			border: none;
+			width: 95%;
+		}
+	}
+	
+}
+
+#published {
+	color: #80867F;
+	border-bottom: 3px solid #;
+	
+	h2 {
+		.openSansBold;
+		padding: 15px;
+	}	
+	
+	a {color: #80867F}
+	
+	.delete_button {
+		color: #CBD5C9;
+	}
+	
+}
+
+.content-listing {
+	height: 550px;
+	overflow: scroll;
+	padding: 0;
+	
+	.item {
+		width: auto;
+		border-top: 1px solid #DFDFDF;
+		padding: 1em 0 1em 2.25em;
+		margin-left: -.3em;
+		
+		.pull-left {
+			width:90%;
+		}
+	
+		a:first-child {
+			color: #000;
+			font-size: 1.25em;
+			line-height: 1.1em;
+			font-weight: bold;
+			margin-right: 30px;
+		}
+		
+		.delete_button {
+			color: #9FA79E;
+			margin-right: .5em;
+			display: none;
+		}
+	}
+	
+	.item:hover {
+		.delete_button {
+			display: inline;
+		}
+	}
+	
+	.link {
+		background: url("/assets/icons/link.png") no-repeat .6em center;
+		background-size: 1.25em;
+	}	
+}
+
+#post_form {
+	#post_title {
+		font-size: 2em;
+		height: 1.45em;
+		padding-top: .25em;
+		padding-bottom: .25em;
+		color: #000;
+	}
+
+	#post_mdown {
+		color: #000;
+	}
+	
+	input, textarea {
+		.openSans;
+		border: none;
+	}
+	
+	#post_url {
+		color: #888;
+	}
+	
+	.btn-group {
+		vertical-align: top;
+		i {display:none;}
+	
+		.active i {display:inline;}
+	}
+	
+}

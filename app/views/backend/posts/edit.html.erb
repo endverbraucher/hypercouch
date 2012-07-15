@@ -1,0 +1,33 @@
+<%= form_for([:backend, @post], :remote => true, :html => { :id => 'post_form' }) do |f| %>
+<fieldset>
+	<div class="control-group">		
+		<div class="controls"><%= f.text_field :title, :placeholder => "Title", :class => 'span8' %></div>
+	</div>
+	<div class="control-group">
+		<div class="controls">
+			<%= f.url_field :url, :placeholder => "Source", :class => 'span8' %>
+		</div>
+	</div>
+	<div class="control-group">
+		<div class="controls">
+			<%= f.text_area :mdown, :rows => 20, :placeholder => "Content", :class => 'span8' %>
+			<%= hidden_field_tag 'type', 'link' %>
+		</div>
+	</div>
+
+	<div class="btn-toolbar">
+		<%= link_to "Preview", post_path(@post), :target => "_blank",:class => "btn preview_button" %>
+
+		<div class="btn-group" data-toggle-name="published"  data-toggle="buttons-radio">
+			<%= f.button raw("<i class='icon icon-ok'></i> Idea"), :value => 'false', :type => "button", :class => "btn btn-inverse"%>
+			<%= f.button raw("<i class='icon icon-ok'></i> Public"),:value => 'true', :type => "button", :class => "btn btn-inverse" %>			
+		</div>
+
+		<%= f.submit :class => 'btn btn-primary' %>
+	
+		<%= f.hidden_field :published, :name => "published" %>		
+		
+	</div>
+
+</fieldset>
+<% end %>

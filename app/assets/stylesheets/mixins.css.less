@@ -1,0 +1,33 @@
+.centered(@min, @max) { 
+    margin: 0 auto;
+    min-width: @min;
+    max-width: @max;
+}
+
+// Clearfix for clearing floats like a boss h5bp.com/q
+.clearfix {
+  zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    zoom: 1;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+//Font-Stacks
+
+.openSans {
+  font-family: OpenSans, Helvetica, Arial, sans-serif;
+}
+
+.openSansBold {
+  font-family: OpenSansBold, Helvetica, Arial, sans-serif;
+}
+
+.openSansExtraBold {
+  font-family: OpenSansExtraBold, Helvetica, Arial, sans-serif;
+}
