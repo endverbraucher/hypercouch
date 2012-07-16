@@ -17,31 +17,19 @@
 <body>
 	
 	<header>
-		<h1>
-			<%= link_to image_tag("slogo2.png", width: "712px"), root_url %>			
-		</h1>
+		<div>
+			<%= link_to image_tag("slogo_small.png", width: "70px"), root_url %>
+			<h1>Slog. <span>Von Beruf Endverbraucher.</span></h1>
+			
+			<ul>
+				<li><a href="http://twitter.com/slogmen">@slogmen<span></span></a></li>
+			</ul>
+		</div>
 	</header>
 
 	<section id="content">
 		<%= yield %>
 	</section>
-	
-	<footer>
-		
-		<div id="colophon">
-			<div id="twitter">
-				<%= image_tag "twitter.png", height: "40px", width: "59px"  %><br />
-				Du solltest mir auf Twitter folgen!
-				<a href="http://twitter.com/slogmen">@slogmen</a>				
-			</div>
-			
-			<div id="license">
-				<%= image_tag "cc.png", height: "40px", width: "123px" %><br />
-				Lizenziert unter einer <a href="http://creativecommons.org/licenses/by-nc/3.0/de/">Creative Commons Lizenz</a>!
-			</div>
-		</div>
-		
-	</footer>
 	
 	<%= javascript_include_tag "application" %>
 	

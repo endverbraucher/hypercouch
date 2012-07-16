@@ -1,4 +1,5 @@
 @import "mixins.css.less";
+@import "elements.css.less";
 
 @gray: #272727;
 @gray_txt: lighten(@gray, 1%);
@@ -11,94 +12,107 @@
 body {
 	.openSans;
 
-    background: @green;
+    background: #e4e0d7;
     font-size: 14px;
     line-height: 1.5em;
-    padding-bottom: 0;
+	padding: 5em 0;
 }
 
 header {
-    .centered(640px, 750px);
-    margin: 3em auto;
-	text-align: center;
+	width: 30%;
+	float: left;
+	padding-left: 5%;
 	
-	img {width: 95%;}
+	div {
+		width: 170px;
+		margin: 0 auto;
+		
+		img { margin-left: 35px;}
+	}
+	
+	h1 {
+		.openSansExtraBold;
+		color: #4c5059;		
+		font-size: 1.5em;
+		font-weight: normal;
+		line-height: 1.5em;
+		
+		span {
+			.openSans;
+			font-weight: lighter;
+		}		
+	}
+	
+	ul {
+		margin: 3em 0;
+		padding: 0;
+		list-style-type: none;
+		
+		li {
+			.border-radius(0, 0, 5px, 5px);
+			background: #aaaaa6;			
+			margin: .5em 15px 0 0;
+			padding: 0 .5em;
+			line-height: 25px;
+			
+			a {
+				font-size: .9em;
+				font-weight: bold;
+				color: #4c5059;
+				text-decoration: none;
+				display: block;
+				width: auto;
+			}
+			
+			span {
+				.rounded(50%);
+				background: #8f8b87;
+				width: 25px;
+				height: 25px;
+				display: block;
+				float: right;
+				margin-right: -19px;
+			}
+			
+			&:hover {
+				background: #8f8b87;
+				
+				span {
+					background: #aaaaa6;
+				}
+			}
+		}
+	}
 }
     
 section {
-    .centered(500px, 600px);
-    background: @green_light;
-    padding: 30px;
+	width: 600px;
+	margin-left: 40%;	
 }
 
 #more_button {
-	background: @gray_light;
-	border-radius: 5px;
-	border: 1px solid @green_dark;
-	margin: 2em auto 0 auto;
+	.rounded(5px);
+	background: #8f8b87;
+	margin: 2em auto 0 20%;
 	padding: .5em;
 	
 	display: block;
 	width: 300px;
 	text-align: center;
 	
-	color: @gray_lighter;
+	color: #aaaaa6;
 	font-size: 1.2em;
 	font-weight: bold;
 	text-decoration: none;
 	
 	&:hover {
-		background: @gray_txt;
-		color: #fff;
+		background: #aaaaa6;
+		color: #8f8b87;
 	}
 }
 
-footer {
-    .centered(560px, 660px);
-        
-    #colophon {
-        .clearfix;
-        
-        padding: 2em 30px;
-        background: @gray;
-        color: @gray_lighter;        
-        text-align: center;
-        font-size: .9em;
-        font-style: italic;
-        
-        a {
-            color: @gray_lighter;            
-        }
-        
-        #twitter {
-            width: 45%;
-            float: left;
-            margin-right: 3%;
-        }
-        
-        #license {
-            width: 45%;
-            float: left;
-        }
-        
-    }
-    
-    #slogan {
-        .clearfix;
-        margin: 2em 0;
-        text-align: center;
-        
-        img {
-            width: 60%;
-        }
-        
-    }
-
-
-}
-
 article {
-    color: @gray_txt;    
+    color: #4c5059;    
     margin: 0;
     width: 95%;
 	
@@ -109,13 +123,13 @@ article {
 	hyphens: auto;
     
     a {
-        color: @gray;
+        color: #4c5059;
         font-weight: bold;
         text-decoration: none;
         border-bottom: 1px solid @gray_lighter;
         
         &:hover {
-        	color: @gray_light;
+        	color: #000;
         }
         
     }
@@ -129,7 +143,7 @@ article {
         	text-decoration: none;
 			border: none;
         	
-            color: #000;
+            color: #4c5059;
             
             &:hover {
                 color: @gray_light;
