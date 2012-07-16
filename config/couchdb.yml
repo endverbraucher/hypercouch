@@ -1,0 +1,13 @@
+default: &default
+  validation_framework: :active_model # optional
+  split_design_documents_per_view: true
+  
+development:
+  <<: *default
+  database: <%= ENV['Couch'] %>/slog_dev
+test:
+  <<: *default  
+  database: <%= ENV['Couch'] %>/slog
+production:
+  <<: *default
+  database: <%= ENV['Couch'] %>/slog

@@ -10,7 +10,6 @@
 # Configuration
 .rvmrc
 .powenv
-config/couchdb.yml
 
 # Ruby on Rails
 *.rbc
