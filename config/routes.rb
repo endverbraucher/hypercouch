@@ -1,8 +1,11 @@
 Hypercouch::Application.routes.draw do
   
   # Feed Urls
-  match '/feed' => 'posts#index', :as => :feed, :defaults => { :format => 'atom' }
+  match '/feed' => 'posts#index', :as => :feed, defaults: { format: 'atom' }
   match '/atom/1' => redirect('/feed')
+  
+  # Sitemap
+  match '/sitemap.xml' => 'posts#sitemap', defaults: {format: 'xml'}
   
   # Blitz.io auth
   get '/mu-bbae2a59-d0f182ac-6003de85-3cc7d260', :to => proc { |env| [200, {}, ["42"]] }

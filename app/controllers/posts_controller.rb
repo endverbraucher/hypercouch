@@ -32,4 +32,16 @@ class PostsController < ApplicationController
     end
   end
   
+  def sitemap
+    headers['Content-Type'] = 'application/xml'
+    @posts = CouchPotato.database.view(Post.published())["rows"]
+    latest = @posts.last["value"]
+        
+    if stale?(:etag => latest, :last_modified => latest.updated_at.utc)
+      respond_to do |format|
+        format.xml { @posts }
+      end
+    end
+  end
+  
 end
