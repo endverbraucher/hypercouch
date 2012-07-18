@@ -4,3 +4,4 @@ Disallow:
 Crawl-delay: 5
 Disallow: /slogin
 Disallow: /slogend
+Sitemap: http://slog.io/sitemap.xml
