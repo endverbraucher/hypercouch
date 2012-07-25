@@ -39,10 +39,12 @@ class Post
   end
   
   def content_feed
-    source = '<p>via: <a href="$Source">Source</a></p>'.sub("$Source", url)
-    
-    return content if url.nil?      
-    return content + source    
+    unless url.nil?
+      source = '<p>via: <a href="$Source">Source</a></p>'.sub("$Source", url)
+      return content + source
+    end
+
+    return content
   end
   
   private
