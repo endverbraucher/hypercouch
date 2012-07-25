@@ -7,6 +7,9 @@ atom_feed do |feed|
     feed.entry post["value"], :published => post["value"].published_at do |entry|
       entry.title post["value"].title
       entry.content post["value"].content, :type => 'html'
+      if post["value"].url
+        entry.link post["value"].url, :rel => 'related'
+      end
       entry.author do |author|
         author.name "slogmen"
       end
