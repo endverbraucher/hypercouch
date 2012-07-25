@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  layout 'backend/backend'
+  layout false
   
   def new
     redirect_to backend_root_url unless session[:user_id].nil?
@@ -8,7 +8,9 @@ class SessionsController < ApplicationController
   def create
     user = CouchPotato.database.load_document(params[:name])
     
-    if user.authenticate(params[:password])
+    if user.nil?
+      redirect_to login_url, :alert => "Invalid user/password combination"
+    elsif user.authenticate(params[:password]) 
       session[:user_id] = user.id
       redirect_to backend_root_url
     else
