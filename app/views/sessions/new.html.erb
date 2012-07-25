@@ -1,24 +1,38 @@
-<div class="login-form span3 well">
-	<%= form_tag do %>
-	<fieldset>
-		<h2>Slogin</h2>
-		
-		<% if flash[:alert] %>
-		<div class= "alert alert-error">
-			 <a class="close" data-dismiss="alert">×</a>
-			<%= flash[:alert] %>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>slog.io | Von Beruf Endverbraucher.</title>
+	<meta charset="UTF-8">
+	<%= stylesheet_link_tag "bootstrap_and_overrides" %>
+	<%= stylesheet_link_tag params[:controller] %>
+	<%= csrf_meta_tags %>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+</head>
+<body>
+	<div class="container">
+		<div class="content span3">
+				<h2>slogin</h2>
+				<div class="login-form">					
+					<% if flash[:alert] %>
+					<div class= "alert alert-error span3">
+						<a class="close" data-dismiss="alert">×</a>
+						<%= flash[:alert] %>
+					</div>
+					<% end %>
+				  
+					<%= form_tag do %>
+					<fieldset>
+						<div class="controls">
+							<%= text_field_tag :name, params[:name], placeholder: "Name", class: "span3" %>
+						</div>
+						<div class="controls">
+							<%= password_field_tag :password, params[:password], placeholder: "Password", class: "span3" %>
+						</div>
+						<%= submit_tag "Login", :class => "btn btn-primary" %>
+					</fieldset>
+					<% end %>
+				</div>
 		</div>
-		<% end %>
-		
-		<div class="control-group">
-			<div class="controls">
-				<%= text_field_tag :name, params[:name], placeholder: "Name" %>
-			</div>			
-			<div class="controls">
-				<%= password_field_tag :password, params[:password], placeholder: "Password" %>
-			</div>			
-		</div>
-		<%= submit_tag "Login", :class => "btn" %>
-	</fieldset>
-	<% end %>
-</div>
+	</div> <!-- /container -->
+</body>
+</html>
