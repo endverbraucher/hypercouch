@@ -8,7 +8,7 @@ gem 'actionmailer'
 gem 'activeresource'
 gem 'tzinfo'
 
-gem 'redcarpet'
+gem 'kramdown'
 gem 'typogruby'
 gem 'twitter-bootstrap-rails'
 gem 'font-awesome-rails'

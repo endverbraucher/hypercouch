@@ -49,6 +49,7 @@ GEM
       railties (>= 3.2.0, < 5.0)
       thor (~> 0.14)
     json (1.6.7)
+    kramdown (0.13.8)
     less (2.2.1)
       commonjs (~> 0.2.6)
     less-rails (2.2.3)
@@ -80,7 +81,6 @@ GEM
     rake (0.9.2.2)
     rdoc (3.12)
       json (~> 1.4)
-    redcarpet (2.1.1)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     routes (0.1.4)
@@ -125,10 +125,10 @@ DEPENDENCIES
   couch_potato (~> 0.6.0)
   font-awesome-rails
   jquery-rails
+  kramdown
   less-rails
   newrelic_rpm
   railties
-  redcarpet
   routes
   thin
   turn

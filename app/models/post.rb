@@ -71,11 +71,8 @@ class Post
       self.id = title.parameterize
     end
     
-  	def markdown2html(txt)
-  		markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, 
-  			:no_intra_emphasis => true, :autolink => true, :space_after_headers => true, :superscript =>true)
-		
-  		markdown.render txt
-  	end
+    def markdown2html(text)
+      mdown = Kramdown::Document.new(text).to_html
+    end
             
 end
