@@ -1,6 +1,7 @@
 @import "mixins.css.less";
 @import "elements.css.less"; // lesselements.com
 @import "twitter/bootstrap/mixins";
+@import "codemirror.css";
 
 body {
 	.sourceSans;
@@ -132,8 +133,11 @@ body {
 	
 	.CodeMirror {
 		.openSans;
-		max-height: 25em;
+		.rounded(3px);
+		border: 1px solid @backendBorderGray;
+		height: 25em;
 		line-height: 1.4em;
+		
 	}
 	
 	#post_url {
