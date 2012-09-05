@@ -6,14 +6,14 @@
 @gray_light: #aaaaa6;
 @gray_lighter: #C8C8C8;
 @gray_dark: #8f8b87;
-@cid_gray: #4c5059;
+@cid_gray: #25272B;
 
 body {
 	.sourceSans;
 
-    background: #e4e0d7;
-    font-size: 16px;
-    line-height: 1.5em;
+    background: #DCD8CE;
+    font-size: 14px;
+    line-height: 1.4em;
 	padding: 5em 0 2em 0;
 }
 
@@ -31,15 +31,13 @@ header {
 	}
 	
 	h1 {
-		.sourceSansExtraBold;
-		color: @cid_gray;		
-		font-size: 1.5em;
-		font-weight: normal;
+		color: #000;		
+		font-size: 25px;
+		font-weight: bolder;
 		line-height: 1.5em;
 
 		span {
-			.sourceSans;
-			font-weight: lighter;
+			font-weight: 300;
 		}		
 	}
 	
@@ -161,6 +159,15 @@ article {
         margin: 1.5em 0;
     }
 	
+	.footnotes {
+		font-size: 0.7em;
+	
+		ol {
+			padding: 0;
+			margin-left: 2em;
+		}
+	}
+	
 	h2 + p,
 	h2 + blockquote,
 	h2 + blockquote p
@@ -225,7 +232,12 @@ article.link {
     
     h2 {
         a {
+			color: #000;
             font-size: .7em;
+			
+			&:hover {
+				text-decoration: underline;
+			}
         }
 		
 		a.permalink {
@@ -243,20 +255,11 @@ article.link {
 article.article + article.link,
 article.link + article.article,
 article.article + article.article {
-    margin-top: 4em;
-}
-
-.footnotes {
-	font-size: 0.7em;
-	
-	ol {
-		padding: 0;
-		margin-left: 2em;
-	}
+    margin-top: 6em;
 }
 
 article.link + article.link {
-    margin-top: 1em;
+    margin-top: 2em;
 }
 
 @media screen and (max-width: 600px) {
