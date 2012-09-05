@@ -5,6 +5,9 @@
 // = require twitter/bootstrap/bootstrap-tab
 // = require twitter/bootstrap/bootstrap-button
 
+// = require codemirror
+// = require codemirror/modes/markdown
+
 $('.delete_button').live ('ajax:success', function() {
 	$(this).closest('.item').fadeOut('fast');
 });
@@ -26,3 +29,6 @@ jQuery(function($) {
 	    });
 	  });
 });
+
+
+var myCodeMirror = CodeMirror.fromTextArea(post_mdown, {lineWrapping: true});

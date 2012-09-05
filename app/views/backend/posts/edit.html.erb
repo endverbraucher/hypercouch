@@ -1,16 +1,16 @@
-<%= form_for([:backend, @post], :remote => true, :html => { :id => 'post_form' }) do |f| %>
+<%= form_for([:backend, @post], :remote => true, :html => { :id => 'post_form', :class => 'span8' }) do |f| %>
 <fieldset>
 	<div class="control-group">		
-		<div class="controls"><%= f.text_field :title, :placeholder => "Title", :class => 'span8' %></div>
+		<div class="controls"><%= f.text_field :title, :placeholder => "Title" %></div>
 	</div>
 	<div class="control-group">
 		<div class="controls">
-			<%= f.url_field :url, :placeholder => "Source", :class => 'span8' %>
+			<%= f.url_field :url, :placeholder => "Source" %>
 		</div>
 	</div>
 	<div class="control-group">
 		<div class="controls">
-			<%= f.text_area :mdown, :rows => 19, :placeholder => "Content", :class => 'span8' %>
+			<%= f.text_area :mdown, :rows => 15, :placeholder => "Content" %>
 			<%= hidden_field_tag 'type', 'link' %>
 		</div>
 	</div>

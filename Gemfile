@@ -12,6 +12,7 @@ gem 'kramdown'
 gem 'typogruby'
 gem 'twitter-bootstrap-rails'
 gem 'font-awesome-rails'
+gem 'codemirror-rails'
 
 gem 'newrelic_rpm'
 gem 'routes'

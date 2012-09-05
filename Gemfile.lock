@@ -26,6 +26,8 @@ GEM
     ansi (1.4.3)
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
+    codemirror-rails (2.33)
+      railties (~> 3.0)
     commonjs (0.2.6)
     couch_potato (0.6.0)
       activemodel
@@ -122,6 +124,7 @@ DEPENDENCIES
   actionpack
   activeresource
   bcrypt-ruby
+  codemirror-rails
   couch_potato (~> 0.6.0)
   font-awesome-rails
   jquery-rails
