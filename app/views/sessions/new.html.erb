@@ -9,30 +9,29 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 </head>
 <body>
-	<div class="container">
-		<div class="content span3">
-				<h2>slogin</h2>
-				<div class="login-form">					
-					<% if flash[:alert] %>
-					<div class= "alert alert-error span3">
-						<a class="close" data-dismiss="alert">×</a>
-						<%= flash[:alert] %>
-					</div>
-					<% end %>
-				  
-					<%= form_tag do %>
-					<fieldset>
-						<div class="controls">
-							<%= text_field_tag :name, params[:name], placeholder: "Name", class: "span3" %>
-						</div>
-						<div class="controls">
-							<%= password_field_tag :password, params[:password], placeholder: "Password", class: "span3" %>
-						</div>
-						<%= submit_tag "Login", :class => "btn btn-primary" %>
-					</fieldset>
-					<% end %>
-				</div>
+	<div class="loginBox well">
+		<h2>slogin</h2>
+		
+		<% if flash[:alert] %>
+		<div class= "alert alert-error">			
+			<%= flash[:alert] %>
 		</div>
-	</div> <!-- /container -->
+		<% end %>
+		
+		<div class="login-form">
+			<%= form_tag do %>
+			<fieldset>
+				<div class="controls">
+					<%= text_field_tag :name, params[:name], placeholder: "Name" %>
+				</div>
+				<div class="controls">
+					<%= password_field_tag :password, params[:password], placeholder: "Password" %>
+				</div>
+				<%= submit_tag "Login", :class => "btn" %>
+			</fieldset>
+			<% end %>
+		</div>
+	</div>
+	
 </body>
 </html>

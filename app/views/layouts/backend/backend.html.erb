@@ -11,11 +11,11 @@
 <body>
 	
 	<div class="container-fluid">		
-		<div class="row-fluid">			
+		<div class="row-fluid" >			
 			<div class="span2 sidebar">
-		        <div class="logo btn-toolbar">
-					<div class="row-fluid">
-						<%= link_to image_tag("slogo_small.png", width: "80px"), backend_root_url %>
+		        <div class="logo">
+					<div class="logoLink">
+						<%= link_to image_tag("slogo_small.png", width: "70px"), backend_root_url %>
 					</div>
 					
 					<% if session[:user_id] %>            
@@ -34,7 +34,7 @@
 		        </div>
 			</div>
 			
-	        <div class="span10">
+	        <div class="yourPosts span9">
 	            <%= yield %>
 	        </div>		
 		</div>		

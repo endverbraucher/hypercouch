@@ -1,6 +1,3 @@
-<div class="row item">
-	<div class="pull-left">
-		<%= link_to @post.title, edit_backend_post_path(@post.id) %>
-	</div>	
-	<%= link_to raw('<i class="icon-large icon-remove-sign"></i>'), backend_post_path(@post.id), :method => :delete, :remote => :true, :class => "pull-right delete_button" %>
-</div>
+<li>
+	<%= link_to @post.title, edit_backend_post_path(@post.id), :class => "post_link" %>
+</li>

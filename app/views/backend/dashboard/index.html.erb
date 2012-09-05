@@ -1,39 +1,43 @@
-<div id="ideas" class="span4 content-listing well">
-	<h1>Ideas</h1>
+<div id="yourPosts" class="span6">
 	
-	<%=  form_for([:backend, @post], :url => backend_new_idea_path,	:remote => true, :html => { :id => 'idea_form', :class => 'form-inline' }) do |f| %>
+	<header>
+		<h2>Your Posts</h2>
 	
-	<div class="controls">
-		<%= f.text_field :title, :placeholder => 'new Idea' %>		
-	</div>
+		<ul id="postTabs">
+			<li class="active"><a href="#ideas" data-toggle="tab">Ideas</a></li>
+			<li><a href="#published" data-toggle="tab">Published</a></li>
+		</ul>	
+	</header>	
+	
+	<div class="tab-content">
+		
+		<div id="ideas" class="tab-pane active">
 			
-	<% end %>
-	
-	<% @ideas.each do |post| %>
-
-	<div class="row item">
-		<div class="pull-left">
-			<%= link_to post["value"].title, edit_backend_post_path(post["value"].id) %>
-		</div>		
-		<%= link_to raw('<i class="icon-large icon-remove-sign"></i>'), backend_post_path(post["value"].id), :method => :delete, :remote => :true, :class => "pull-right delete_button" %>		
-	</div>
+			<%=  form_for([:backend, @post], :url => backend_new_idea_path,	:remote => true, :html => { :id => 'idea_form', :class => 'form-inline' }) do |f| %>
+				<%= f.text_field :title, :placeholder => 'add a new idea here' %>
+			<% end %>
 		
-	<% end %>	
-	
-</div>
-
-<div id="published" class="span4 content-listing">
-	<h2>Published</h2>
-	
-	<% @published.each do |post| %>
-
-	<div class="item row">
-		<div class="pull-left">			
-			<%= link_to post["value"].title, edit_backend_post_path(post["value"].id) %>
+			<ul id="ideasList">
+				<% @ideas.each do |post| %>
+				<li>
+					<%= link_to post["value"].title, edit_backend_post_path(post["value"].id), :class => "post_link" %>
+				</li>
+				<% end %>
+			</ul>
+			
 		</div>
-		<%= link_to raw('<i class="icon-large icon-remove-sign"></i>'), backend_post_path(post["value"].id), :method => :delete, :remote => :true, :class => "pull-right delete_button" %>		
-	</div>
 		
-	<% end %>
-	
-</div>		
+		<div id="published" class="tab-pane">
+		
+			<ul>	
+				<% @published.each do |post| %>
+				<li>
+					<%= link_to post["value"].title, edit_backend_post_path(post["value"].id) %>
+				</li>		
+				<% end %>
+			</ul>
+			
+		</div>
+		
+	</div>
+</div>

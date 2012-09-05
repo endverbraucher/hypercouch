@@ -2,6 +2,7 @@
 // = require jquery_ujs
 // = require twitter/bootstrap/bootstrap-dropdown
 // = require twitter/bootstrap/bootstrap-alert
+// = require twitter/bootstrap/bootstrap-tab
 // = require twitter/bootstrap/bootstrap-button
 
 $('.delete_button').live ('ajax:success', function() {
@@ -9,7 +10,7 @@ $('.delete_button').live ('ajax:success', function() {
 });
 
 jQuery(function($) {
-	$('div.btn-group[data-toggle-name=*]').each(function(){
+	$('div.btn-group').each(function(){
 	    var group   = $(this);
 	    var form    = group.parents('form').eq(0);
 	    var name    = group.attr('data-toggle-name');
