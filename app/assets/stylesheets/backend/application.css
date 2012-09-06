@@ -6,6 +6,5 @@
  *= require bootstrap_and_overrides
  *= require open-sans
  *= require backend/backend
- *= require backend/codemirror
  */
  
