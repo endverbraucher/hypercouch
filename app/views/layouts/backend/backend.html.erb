@@ -18,19 +18,10 @@
 						<%= link_to image_tag("slogo_small.png", width: "70px"), backend_root_url %>
 					</div>
 					
-					<% if session[:user_id] %>            
-		            <div class="btn-group">
-		              <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-		                <%= session[:user_id] %>
-		                <span class="caret"></span>
-		              </a>
-		              <ul class="dropdown-menu">
-						  <li><%= link_to "show slog", root_url, target: "_blank" %></li>
-  						  <li class="divider"></li>
-						  <li><%= link_to "slog out", logout_url %></li>
-		              </ul>
-		            </div>
-					<% end %>					
+					<div id="buttons">
+						<%= link_to raw("<i class='icon-file'></i>  visit slog"), root_url, target: "_blank", :class => "btn btn-block" %>
+						<%= link_to raw("<i class='icon-off'></i>  slog out"), logout_url, :class => "btn btn-block" %>
+					</div>
 		        </div>
 			</div>
 			
@@ -41,7 +32,7 @@
 	</div>
 	
     <footer>
-        <h3>"I'm living like there's no tomorrow, because there isn't one."   <small>Don Draper.</small></h3>
+        <h4>"I'm living like there's no tomorrow, because there isn't one." <small>Don Draper.</small></h4>
     </footer>
 
     <%= javascript_include_tag "backend/application" %>

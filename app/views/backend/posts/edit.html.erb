@@ -1,7 +1,7 @@
 <%= form_for([:backend, @post], :remote => true, :html => { :id => 'post_form' }) do |f| %>
 <fieldset>
 	<div class="control-group">		
-		<div class="controls"><%= f.text_field :title, :placeholder => "Title", :class => 'span8' %></div>
+		<div class="controls"><%= f.text_area :title, :rows => 1, :placeholder => "Title", :class => 'span8' %></div>
 	</div>
 	<div class="control-group">
 		<div class="controls">
@@ -10,7 +10,7 @@
 	</div>
 	<div class="control-group">
 		<div class="controls">
-			<%= f.text_area :mdown, :rows => 19, :placeholder => "Content", :class => 'span8' %>
+			<%= f.text_area :mdown, :rows => 5, :placeholder => "Content", :class => 'span8' %>
 			<%= hidden_field_tag 'type', 'link' %>
 		</div>
 	</div>

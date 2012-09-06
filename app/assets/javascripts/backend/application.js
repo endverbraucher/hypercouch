@@ -4,6 +4,7 @@
 // = require twitter/bootstrap/bootstrap-alert
 // = require twitter/bootstrap/bootstrap-tab
 // = require twitter/bootstrap/bootstrap-button
+// = require jquery.autosize
 
 $('.delete_button').live ('ajax:success', function() {
 	$(this).closest('.item').fadeOut('fast');
@@ -24,5 +25,9 @@ jQuery(function($) {
 	        button.addClass('active');
 	      }
 	    });
-	  });
+	  });	  
+});
+
+$(document).ready(function(){
+    $('textarea').autosize();  
 });

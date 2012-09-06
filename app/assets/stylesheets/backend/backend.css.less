@@ -8,6 +8,10 @@ body {
 	color: @backendTextGray;
 }
 
+.btn {
+	font-weight: 300;
+}
+
 .sidebar {
 	
 	.logoLink {
@@ -15,47 +19,40 @@ body {
 		margin: 0 auto;
 	}
 		
-	.btn-group {
-		padding-top: 1em;
-		font-size: 1em;
-		text-align: center;
+	#buttons {
+		width: 85px;
+		margin: 2em auto;
 		
-		a, ul {text-align: left;}
+		.btn {
+			margin-bottom: 1em;
 			
+			i {
+				margin-right: .25em;
+			}
+			
+		}
+		
 	}
 }
 
 #yourPosts {
-	border: 1px solid @backendBorderGray;
-	.rounded(5px);
+	border: 3px solid #666;
 	
 	header {
-		#gradient > .vertical(@backendGrayLighter, @backendGrayLight);
-		.border-radius(5px, 0, 0,5px);
-		
-		h2 {
-			margin: 0;
-			padding: 10px;
-			font-size: 1.2em;
-			line-height: 1.4em;
-		}
+		padding: 15px;
 		
 		#postTabs {
 			.clearfix;
 			list-style-type: none;
 			margin: 0;
-			padding: 0 10px;			
-			border-bottom: 1px solid darken(@backendBorderGray, 10%);
 			
 			li {
 				float: left;
-				padding: 0;
 				margin-right: 1em;
 				
 				a {
 					color: @backendTextGray;
-				}
-				
+				}				
 			}
 			
 			li.active {
@@ -67,43 +64,46 @@ body {
 	}
 	
 	#idea_form {
-		background: @backendGrayLighter;
-		padding: 10px;
-		margin: 0;
+		margin: 0 0 1em 0;
+		padding-left: 10px;
+		display: block;
+		width: auto;
 		
 		#post_title {
-			width: 95%;
+			width: 93%;
 		}
-		
-		border-bottom: 1px solid @backendBorderGray;
 	}
 	
 	.tab-content{ 
-		max-height: 450px;
+		max-height: 500px;
 		overflow: auto;
 		
 		ul {
 			list-style-type: none;
 			padding: 0;
 			margin: 0;
+			border-top: 1px solid @backendBorderGray;
 			
 			li {
 				.clearfix;
-				margin: 0;
-				padding: .5em 20px;
-				font-size: 1.2em;
-				line-height: 1.8em;		
 				border-bottom: 1px solid @backendBorderGray;
+				&:last-child {border: none;}
 				
 				a {
-					.openSansBold;
+					padding: 1em 15px;
+					font-size: 1.2em;
+					line-height: 1.4em;
+					
+					font-weight: bold;
 					color: #000;
+					display: block;
+					
+					&:hover {
+						background: @backendGrayLighter;
+						text-decoration: none;
+					}
+					
 				}
-				
-				&:last-child {
-					border: none;
-				}
-				
 			}
 		}
 	}
@@ -112,7 +112,7 @@ body {
 #post_form {
 	#post_title {
 		font-size: 2em;
-		height: 1.45em;
+		line-height: 1.2em;
 		padding-top: .25em;
 		padding-bottom: .25em;
 		color: #000;
@@ -130,6 +130,11 @@ body {
 		color: #888;
 	}
 	
+	.btn-toolbar {
+		position: fixed;
+		bottom: 30px;
+	}
+	
 	.btn-group {
 		vertical-align: top;
 		i {display:none;}
@@ -140,12 +145,12 @@ body {
 }
 
 footer {
-	background: #fff;
 	position: fixed;
 	bottom: 0;
-	width: 100%;
+	width: 85%;
+	z-index: 100;
 	
-	padding: 1.5em 0;
+	padding-top: 5em 0;
 	
 	text-align: center;
 }

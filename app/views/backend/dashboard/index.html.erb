@@ -1,8 +1,6 @@
-<div id="yourPosts" class="span6">
+<div id="yourPosts" class="span4">
 	
 	<header>
-		<h2>Your Posts</h2>
-	
 		<ul id="postTabs">
 			<li class="active"><a href="#ideas" data-toggle="tab">Ideas</a></li>
 			<li><a href="#published" data-toggle="tab">Published</a></li>
@@ -13,7 +11,7 @@
 		
 		<div id="ideas" class="tab-pane active">
 			
-			<%=  form_for([:backend, @post], :url => backend_new_idea_path,	:remote => true, :html => { :id => 'idea_form', :class => 'form-inline' }) do |f| %>
+			<%=  form_for([:backend, @post], :url => backend_new_idea_path,	:remote => true, :html => { :id => 'idea_form'}) do |f| %>
 				<%= f.text_field :title, :placeholder => 'add a new idea here' %>
 			<% end %>
 		
