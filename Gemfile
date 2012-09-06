@@ -7,11 +7,11 @@ gem 'actionpack'
 gem 'actionmailer'
 gem 'activeresource'
 gem 'tzinfo'
+gem "couch_potato"
 
 gem 'kramdown'
 gem 'typogruby'
 gem 'twitter-bootstrap-rails'
-gem 'font-awesome-rails'
 
 gem 'newrelic_rpm'
 gem 'routes'
@@ -26,9 +26,7 @@ end
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby'
-gem 'thin'
-
-gem "couch_potato", "~> 0.6.0"
+#gem 'thin'
 
 group :test do
   # Pretty printed test output
