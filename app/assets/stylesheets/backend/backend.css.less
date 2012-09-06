@@ -1,15 +1,10 @@
 @import "mixins.css.less";
 @import "elements.css.less"; // lesselements.com
-@import "twitter/bootstrap/mixins";
 
 body {
 	.sourceSans;
 	background: #fff;
 	color: @backendTextGray;
-}
-
-.btn {
-	font-weight: 300;
 }
 
 .sidebar {
@@ -25,6 +20,7 @@ body {
 		
 		.btn {
 			margin-bottom: 1em;
+			font-weight: 300;
 			
 			i {
 				margin-right: .25em;
@@ -37,6 +33,7 @@ body {
 
 #yourPosts {
 	border: 3px solid #666;
+	width: 400px;
 	
 	header {
 		padding: 15px;
@@ -124,35 +121,30 @@ body {
 	
 	input, textarea {
 		.sourceSans;
+		border: none;
+		.box-shadow(none);
+		resize: none;
 	}
 	
 	#post_url {
-		color: #888;
+		color: #999;
+		margin-top: -3em;
 	}
 	
 	.btn-toolbar {
 		position: fixed;
-		bottom: 30px;
+		bottom: 0px;
+		right: 20px;
+		background: #fff;
+		
+		.preview_button {font-weight: bold}	
 	}
 	
 	.btn-group {
 		vertical-align: top;
-		i {display:none;}
-	
-		.active i {display:inline;}
+		
+		i {display: none;}
+		.active i {display:inline-block;}
 	}
 	
 }
-
-footer {
-	position: fixed;
-	bottom: 0;
-	width: 85%;
-	z-index: 100;
-	
-	padding-top: 5em 0;
-	
-	text-align: center;
-}
-
-
