@@ -2,7 +2,7 @@
 @import "elements.css.less"; // lesselements.com
 
 body {
-	.sourceSans;
+	font-family: source-sans-pro, Helvetica, Arial, sans-serif;
 	background: #fff;
 	color: @backendTextGray;
 }
@@ -119,8 +119,8 @@ body {
 		color: #000;
 	}
 	
-	input, textarea {
-		.sourceSans;		
+	input[type="text"], input[type="url"], textarea {
+		font-family: source-sans-pro, Helvetica, Arial, sans-serif;
 		.box-shadow(none);
 		
 		border: none;
@@ -138,8 +138,6 @@ body {
 		bottom: 0px;
 		right: 20px;
 		background: #fff;
-		
-		.preview_button {font-weight: bold}	
 	}
 	
 	.btn-group {

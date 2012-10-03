@@ -12,6 +12,7 @@
   <%= stylesheet_link_tag "application" %>
   <%= csrf_meta_tags %>
   <%= auto_discovery_link_tag :atom, feed_path %>
+  <script src="http://use.edgefonts.net/source-sans-pro.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
   <meta name="google-site-verification" content="HJm0ZJgwuIvaoKiDQXPb3XjcZRmnlHJLEd95Pm3PHTI" />
 </head>
@@ -34,26 +35,5 @@
 	</section>
 	
 	<%= javascript_include_tag "application" %>
-	
-	<!-- Start Open Web Analytics Tracker -->
-	<script type="text/javascript">
-	//<![CDATA[
-	var owa_baseUrl = 'http://stats.dieblogger.de/';
-	var owa_cmds = owa_cmds || [];
-	owa_cmds.push(['setSiteId', 'd736512dcf0ca29bcbee420ddc01b16b']);
-	owa_cmds.push(['trackPageView']);
-	owa_cmds.push(['trackClicks']);
-	owa_cmds.push(['trackDomStream']);
-
-	(function() {
-		var _owa = document.createElement('script'); _owa.type = 'text/javascript'; _owa.async = true;
-		owa_baseUrl = ('https:' == document.location.protocol ? window.owa_baseSecUrl || owa_baseUrl.replace(/http:/, 'https:') : owa_baseUrl );
-		_owa.src = owa_baseUrl + 'modules/base/js/owa.tracker-combined-min.js';
-		var _owa_s = document.getElementsByTagName('script')[0]; _owa_s.parentNode.insertBefore(_owa, _owa_s);
-	}());
-	//]]>
-	</script>
-	<!-- End Open Web Analytics Code -->
-
 </body>
 </html>
