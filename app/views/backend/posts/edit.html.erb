@@ -18,13 +18,13 @@
 	<div class="btn-toolbar">
 		
 		<div class="btn-group" data-toggle-name="published"  data-toggle="buttons-radio">
-			<%= f.button raw("<i class='icon-ok icon-white'>&nbsp;&nbsp;&nbsp;</i> Idea"), :value => 'false', :type => "button", :class => "btn btn-inverse btn-large"%>
-			<%= f.button raw("<i class='icon-ok icon-white'>&nbsp;&nbsp;&nbsp;</i> Public"),:value => 'true', :type => "button", :class => "btn btn-inverse btn-large" %>			
+			<%= f.button raw("<i class='icon-ok icon-white'>&nbsp;&nbsp;&nbsp;</i> Idea"), :value => 'false', :type => "button", :class => "btn btn-inverse"%>
+			<%= f.button raw("<i class='icon-ok icon-white'>&nbsp;&nbsp;&nbsp;</i> Public"),:value => 'true', :type => "button", :class => "btn btn-inverse" %>			
 		</div>
 		
-		<%= link_to "Preview", post_path(@post), :target => "_blank",:class => "btn btn-inverse preview_button btn-large" %>
+		<%= link_to "Preview", post_path(@post), :target => "_blank",:class => "btn btn-inverse " %>
 
-		<%= f.submit "save", :class => 'btn btn-inverse btn-large' %>
+		<%= f.submit "save", :class => 'btn btn-inverse' %>
 	
 		<%= f.hidden_field :published, :name => "published" %>		
 		
