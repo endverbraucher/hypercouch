@@ -1,11 +1,7 @@
 source 'http://rubygems.org'
 ruby "1.9.3"
 
-#gem 'rails', '3.2.3'  # we don't need ActiveRecord!
-gem 'railties'
-gem 'actionpack'
-gem 'actionmailer'
-gem 'activeresource'
+gem 'rails', '3.2.11'
 gem 'tzinfo'
 gem "couch_potato"
 
@@ -15,6 +11,8 @@ gem 'twitter-bootstrap-rails'
 
 gem 'newrelic_rpm'
 gem 'routes'
+
+gem 'therubyracer'
 
 # Gems used only for assets and not required
 # in production environments by default.
