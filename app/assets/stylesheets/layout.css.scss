@@ -1,0 +1,31 @@
+header {
+  width: 100%;
+  background: $header_background_color;
+  @include box-shadow(#{0 2px 5px #eee});
+
+  >nav {
+    width: 825px;
+    margin: 0 auto;
+  }
+
+}
+
+.container {
+  width: 825px;
+  margin: 0 auto;
+  padding-top: 75px;
+
+  >.m-sidebar {
+    width: 250px;
+    float: left;
+  }
+
+  .content {
+    width: 550px;
+
+    >section {
+      margin-left: 275px;
+    }
+  }
+
+}

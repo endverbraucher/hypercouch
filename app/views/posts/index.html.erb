@@ -1,9 +1,9 @@
-<% @posts[0..9].each do |post|	
-	if post["value"].url %>
-		<%= render :partial => "shared/link", :locals => { :post => post["value"] } %>
-<% else %>
-		<%= render :partial => "shared/article", :locals => { :post => post["value"] } %>
-<% end %>
-<%end%>
-
-<%= link_to "show more", more_posts_path(:startkey => @posts.last["key"]), :id => "more_button", :remote => true %>
+<section class="m-posts">
+  <% @posts[0..9].each do |post|
+  	if post["value"].url %>
+  		<%= render :partial => "shared/link", :locals => { :post => post["value"] } %>
+  <% else %>
+  		<%= render :partial => "shared/article", :locals => { :post => post["value"] } %>
+  <% end %>
+  <%end%>
+</section>

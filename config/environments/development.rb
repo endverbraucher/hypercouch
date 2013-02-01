@@ -27,7 +27,5 @@ Hypercouch::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
-  
-  config.serve_static_assets = true
-  # config.static_cache_control = "public, max-age=31536000"
+
 end

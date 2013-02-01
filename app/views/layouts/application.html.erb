@@ -1,39 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>slog.io | 
-	  <% if controller.action_name == "show" %>
-	  	<%= @post.title %>
-	  <% else %>
-	  	Von Beruf Endverbraucher.
-	  <% end %>
-  </title>
   <meta charset="UTF-8">
+  <title>
+    slog.io | <%= controller.action_name == "show" ? @post.title : "Von Beruf Endverbraucher" %>
+  </title>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic|Vollkorn:400italic,700italic,400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Cardo:400,400italic,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag "application" %>
   <%= csrf_meta_tags %>
   <%= auto_discovery_link_tag :atom, feed_path %>
-  <script src="http://use.edgefonts.net/source-sans-pro.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
   <meta name="google-site-verification" content="HJm0ZJgwuIvaoKiDQXPb3XjcZRmnlHJLEd95Pm3PHTI" />
 </head>
 <body>
-	
-	<header>
-		<div>
-			<%= link_to image_tag("slogo_small.png", width: "70px"), root_url %>
-			<h1>Slog. <span>Von Beruf Endverbraucher.</span></h1>
-			
-			<ul>
-				<li><a href="http://twitter.com/slogmen">@slogmen<span></span></a></li>
-				<li><%= link_to "news feed <span></span>".html_safe, feed_url%></li>
-			</ul>
-		</div>
-	</header>
 
-	<section id="content">
-		<%= yield %>
-	</section>
-	
-	<%= javascript_include_tag "application" %>
+  <header>
+    <nav class="m-menu">
+      <ul class="m-menu-list">
+        <!--
+          TODO Link für Archiv einfügen!
+        -->
+        <li><%= link_to "slog.io", root_url %></li>
+        <li><a href="">Archiv</a></li>
+        <li><a href="http://twitter.com/slogmen">@slogmen</a></li>
+        <li><%= link_to "feed", feed_url %></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <aside class="m-sidebar">
+      <%= link_to image_tag("slogo.png", width: "100px"), root_url, :class => "m-sidebar-slogo" %>
+
+      <h1 class="m-sidebar-title">
+        <a href="http://slog.io">Slog.</a>
+        <span class="m-sidebar-tagline">Von Beruf Endverbraucher.</span>
+      </h1>
+
+      <div class="m-sidebar-author">Thomas Schrader</div>
+
+      <div class="m-sidebar-last-update"><%= @pub_date %></div>
+    </aside>
+
+    <div class="content">
+      <%= yield %>
+    </div>
+  </div>
+
+  <%= javascript_include_tag "application" %>
 </body>
 </html>

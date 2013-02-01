@@ -1,10 +1,10 @@
 <article class="link">
-	<span class="pubdate"><%= post.pubdate %></span>	
-	<h2>
-		<%= link_to post.title, post.url %>&nbsp;
-		<%= link_to image_tag("slog_permalink.png", size: "16x10"), post_path(post), class: "permalink" %>
+
+  <h2>
+		<%= link_to post.title, post.url, class: "m-post-title" %>&nbsp;
+		<%= link_to image_tag("anchor.svg", size: "16x10"), post_path(post), class: "permalink" %>
 	</h2>
-	
+
 	<%= raw post.body %>
-		
+
 </article>

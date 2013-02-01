@@ -1,0 +1,60 @@
+.m-posts,
+.m-post {
+  width: 550px;
+
+  > article {
+    margin-bottom: 7em;
+  }
+
+  h2 {
+    margin: 0;
+    padding: 0;
+    line-height: 1.4em;
+  }
+
+  .m-post-title {
+    font-family: Source Sans Pro, Helvetica, Arial, sans-serif;
+    font-weight: 900;
+    font-size: .8em;
+    text-decoration: none;
+
+    color: $article_headline_color;
+    border-bottom: 1px solid $article_headline_border_color;
+
+    &:hover {
+      border-bottom: 1px solid $article_headline_border_color_hover;
+    }
+
+  }
+
+  .m-post-pubdate {
+    font-weight: 300;
+    color: #888;
+  }
+
+  p {
+    font-family: Lora, Georgia, Sans-Serif;
+    font-weight: normal;
+    font-size: 1.1em;
+    line-height: 2em;
+    color: $article_copy_color;
+
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    word-wrap: hyphenate;
+  }
+
+  blockquote {
+    margin: 0;
+    padding: 0 1em;
+    border-left: 3px solid $article_blockquote_border_color;
+
+    >p {
+      font-style: italic;
+      color: $article_blockquote_color;
+    }
+  }
+
+}

@@ -1,0 +1,44 @@
+.m-sidebar {
+
+  >.m-sidebar-slogo {
+    display: block;
+    margin-left: 20px;
+  }
+
+  >.m-sidebar-title {
+    margin: 0;
+    margin-top: 35px;
+    padding: 0;
+    line-height: 1.2em;
+    font-size: 1.6em;
+
+    a {
+      font-weight: bolder;
+      color: $title_color;
+      text-decoration: none;
+    }
+
+    >.m-sidebar-tagline {
+      margin: 0;
+      margin-top: 1em;
+      padding: 0;
+      font-weight: 300;
+      color: $tagline_color;
+    }
+  }
+
+  >.m-sidebar-author {
+    margin: 35px 0;
+
+    font-size: .9em;
+    font-weight: 600;
+    color: $author_color;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  >.m-sidebar-last-update {
+    font-weight: 400;
+    color: $last_update_color;
+  }
+}
