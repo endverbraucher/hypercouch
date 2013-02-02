@@ -11,13 +11,12 @@ gem 'typogruby'
 gem 'therubyracer'
 
 gem 'newrelic_rpm'
+gem 'jquery-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'uglifier'
-  gem 'jquery-rails'
-
   gem 'sass-rails',   '~> 3.2.5'
   gem 'bootstrap-sass', '~> 2.2.2.0'
   gem 'bootstrap_forms', '~> 2.0.8'
