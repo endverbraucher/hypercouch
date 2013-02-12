@@ -1,0 +1,58 @@
+.m-hero-wrapper {
+  @include clearfix;
+
+  padding: 2em 0;
+  background: $header_background_color;
+}
+
+.m-hero-logo {
+  text-align: center;
+  position: fixed;
+}
+
+.m-hero-logolink {
+  width: 120px;
+  height: 120px;
+  display: inline-block;
+
+  background: url(image_path("logo_bg.svg")) no-repeat;
+  text-align: center;
+
+  >img {
+    width: 80px;
+    margin-top: 30px;
+  }
+}
+
+.m-hero-selfdefinition {
+  width: $content_width;
+  margin-left: $right_column_left_margin;
+
+  >p {
+    margin:.5em 0;
+
+    font-family: Source Sans Pro;
+    font-weight: 200;
+    font-size: 2em;
+    color: $header_font_color;
+
+    >.m-hero-title {font-weight: 600;}
+    >.m-hero-author {font-weight: 400;}
+    >.m-hero-remark {font-weight: 400;}
+
+  }
+}
+
+.m-hero-remark {
+  background: $hero-remark-background;
+  padding: 0 .1em;
+  margin: 0 -.1em;
+}
+
+.remark-refresh img{
+  position: relativ;
+  width: 25px;
+  height: 20px;
+  margin-top: -.1em;
+  margin-left: .2em;
+}

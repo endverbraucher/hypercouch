@@ -1,8 +1,9 @@
 .m-posts,
 .m-post {
-  width: 550px;
+  width: $content_width;
+  margin-bottom: 10em;
 
-  > article {
+  article {
     margin-bottom: 7em;
   }
 
@@ -10,6 +11,10 @@
     margin: 0;
     padding: 0;
     line-height: 1.4em;
+  }
+
+  a {
+    color: #000;
   }
 
   .m-post-title {
@@ -24,7 +29,6 @@
     &:hover {
       border-bottom: 1px solid $article_headline_border_color_hover;
     }
-
   }
 
   .m-post-pubdate {
@@ -36,7 +40,7 @@
     font-family: Lora, Georgia, Sans-Serif;
     font-weight: normal;
     font-size: 1.1em;
-    line-height: 2em;
+    line-height: 1.75em;
     color: $article_copy_color;
 
     -webkit-hyphens: auto;
@@ -56,5 +60,30 @@
       color: $article_blockquote_color;
     }
   }
+}
 
+.m-posts-more {
+  h3 {
+    color: #666;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0 0 0 2em;
+    padding: 0;
+
+    li {
+      margin-bottom: 1em;
+    }
+
+    li a {
+      font-weight: 700;
+      font-size: 1.1em;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }

@@ -1,9 +1,20 @@
 <section class="m-posts">
   <% @posts[0..9].each do |post|
-  	if post["value"].url %>
-  		<%= render :partial => "shared/link", :locals => { :post => post["value"] } %>
-  <% else %>
-  		<%= render :partial => "shared/article", :locals => { :post => post["value"] } %>
+    	if post["value"].url %>
+    		<%= render :partial => "shared/link", :locals => { :post => post["value"] } %>
+    <% else %>
+    		<%= render :partial => "shared/article", :locals => { :post => post["value"] } %>
+    <% end %>
   <% end %>
-  <%end%>
+
+  <section class="m-posts-more">
+    <h3>weitere Artikel:</h3>
+    <ul>
+      <% @more_posts[0..5].each do |post| %>
+    <li><%= link_to post["value"], post_url(post["id"]) %></li>
+    <% end %>
+    </ul>
+    <br />weitere Artikel gibt es im <%= link_to "Archiv", more_posts_url %>
+  </section>
+
 </section>

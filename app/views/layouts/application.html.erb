@@ -10,39 +10,55 @@
   <%= stylesheet_link_tag "application" %>
   <%= csrf_meta_tags %>
   <%= auto_discovery_link_tag :atom, feed_path %>
-  <meta name="google-site-verification" content="HJm0ZJgwuIvaoKiDQXPb3XjcZRmnlHJLEd95Pm3PHTI" />
+  <meta name="google-site-verification"
+    content="HJm0ZJgwuIvaoKiDQXPb3XjcZRmnlHJLEd95Pm3PHTI" />
 </head>
 <body>
 
   <header>
-    <nav class="m-menu">
-      <ul class="m-menu-list">
-        <!--
-          TODO Link für Archiv einfügen!
-        -->
-        <li><%= link_to "slog.io", root_url %></li>
-        <li><a href="">Archiv</a></li>
-        <li><a href="http://twitter.com/slogmen">@slogmen</a></li>
-        <li><%= link_to "feed", feed_url %></li>
-      </ul>
-    </nav>
+    <section class="m-hero">
+      <div class="m-hero-wrapper">
+
+        <div class="m-hero-logo left-column">
+          <%= link_to image_tag("slogo.svg", width: "100px"),
+            root_url, :class => "m-hero-logolink" %>
+        </div>
+
+        <div class="m-hero-selfdefinition right-column">
+          <p>
+            <span class="m-hero-title">Slog.</span>
+            Hallo, ich bin <span class="m-hero-author">Thomas Schrader</span>.
+            <br />Ich bin <span class="m-hero-remark">von Beruf Endverbraucher.</span>
+            <a href="#" class="remark-refresh">
+              <%= image_tag "refresh.svg", :title => "weiter" %>
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
   </header>
 
   <div class="container">
-    <aside class="m-sidebar">
-      <%= link_to image_tag("slogo.png", width: "100px"), root_url, :class => "m-sidebar-slogo" %>
 
-      <h1 class="m-sidebar-title">
-        <a href="http://slog.io">Slog.</a>
-        <span class="m-sidebar-tagline">Von Beruf Endverbraucher.</span>
-      </h1>
+    <aside class="m-sidebar left-column">
 
-      <div class="m-sidebar-author">Thomas Schrader</div>
+      <nav class="m-sidebar-menu">
+        <ul class="m-sidebar-menu-list">
+          <!--
+            TODO Link für Archiv einfügen!
+          -->
+          <li><%= link_to "slog.io", root_url %></li>
+          <li><a href="">Archiv</a></li>
+          <li><a href="http://twitter.com/slogmen">@slogmen</a></li>
+          <li><%= link_to "feed", feed_url %></li>
+        </ul>
+      </nav>
 
       <div class="m-sidebar-last-update"><%= @pub_date %></div>
+
     </aside>
 
-    <div class="content">
+    <div class="content right-column">
       <%= yield %>
     </div>
   </div>

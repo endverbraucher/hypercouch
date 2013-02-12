@@ -4,13 +4,14 @@
 
 @import "bootstrap/mixins";
 @import "bootstrap/reset";
+@import "settings";
 @import "colors";
 @import "base";
 @import "layout";
 
 /* Modules */
-@import "modules/m-menu";
 @import "modules/m-sidebar";
+@import "modules/m-hero";
 @import "modules/m-posts";
 
 @import "state";

@@ -1,11 +1,16 @@
-$body_background: #F5F5F3;
+$body_background: #FFF;
 $body_color: #333;
 
-$header_background_color: #FFF;
-$menu_item_font_color: #777;
+$header_background_color: #355093;
+$header_font_color: #eee;
+
+$menu_item_font_color: #333;
 $menu_item_font_color_hover: #444;
 $menu_item_border_color: #ddd;
 $menu_item_border_color_hover: #888;
+
+$hero-remark-background: lighten($header_background_color, 15%);
+$hero-remark-circle: lighten($header_background_color, 20%);
 
 $title_color: #333;
 $tagline_color: #666;
