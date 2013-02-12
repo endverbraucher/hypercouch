@@ -29,6 +29,12 @@ class Post
     	          emit(Date.parse(doc.created_at), doc);
               }"
 
+  view :archive, :type => :raw,
+        map: "function(doc) {
+              if (doc.ruby_class == 'Post' && doc.published)
+    	          emit(Date.parse(doc.published_at), doc.title);
+              }"
+
   def pubdate
     date = published_at.nil? ? created_at : published_at
     I18n.l date.to_date, format: :long
