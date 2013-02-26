@@ -12,13 +12,13 @@ class Post
   property :published_at, :type => Time
   property :published, :type => :boolean, :default => false
 
+  view :published, :key => :published_at, :conditions => 'doc.published'
+  view :unpublished, :key => :published_at, :conditions => '!doc.published'
+
   before_save :convert_mdown
   before_save :set_publish_date
   before_save :slugify
   before_save :set_url_nil_if_empty
-
-  view :published, :key => :published_at, :conditions => 'doc.published'
-  view :unpublished, :key => :published_at, :conditions => '!doc.published'
 
   def pubdate
     date = published_at.nil? ? created_at : published_at
