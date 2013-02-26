@@ -2,20 +2,22 @@ source 'http://rubygems.org'
 ruby "1.9.3"
 
 gem 'rails', '3.2.12'
-gem 'tzinfo'
-gem 'couch_potato'
-gem 'cache_digests'
+gem 'thin'
 
-gem 'kramdown'
-gem 'typogruby'
-gem 'therubyracer'
 gem 'json', '1.7.5'
 gem 'multi_json', '1.5.0'
 
-gem 'newrelic_rpm'
+gem 'couch_potato'
+gem 'memcachier'
+gem 'dalli'
+
+gem 'tzinfo'
+gem 'kramdown'
+gem 'typogruby'
+gem 'therubyracer'
 gem 'jquery-rails'
-gem 'soundmanager-rails'
 gem 'truncate_html'
+gem 'cache_digests'
 
 # Gems used only for assets and not required
 # in production environments by default.
