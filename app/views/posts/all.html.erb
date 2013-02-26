@@ -1,3 +1,4 @@
+<% cache @posts do %>
 <section class="m-archive">
   <% @archive.each do |year| %>
     <h1 class="m-archive-year"><%= year.first %></h1>
@@ -12,9 +13,7 @@
         </li>
         <% end %>
       </ul>
-
-
-
     <% end %>
   <% end %>
 </section>
+<% end %>
