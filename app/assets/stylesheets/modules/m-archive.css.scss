@@ -1,0 +1,23 @@
+.m-archive {
+
+  article {
+    margin-bottom: 2em;
+  }
+
+  h2 {
+    margin: 0;
+    padding: 0;
+    line-height: .8em !important;
+  }
+
+  .m-post-title {
+    font-weight: 700;
+    font-size: .8em !important;
+
+    border-bottom: none;
+
+    &:hover {
+      border-bottom: none;
+    }
+  }
+}
