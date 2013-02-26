@@ -2,8 +2,14 @@
  *= require_self
 */
 
-@import "bootstrap/mixins";
+/* 3rd-Party */
+@import "bourbon";
+@import "neat";
+@import "bootstrap/mixins"; //needed for reset
 @import "bootstrap/reset";
+@import "media-queries";
+
+/*SMACSS*/
 @import "settings";
 @import "colors";
 @import "base";
@@ -13,5 +19,7 @@
 @import "modules/m-sidebar";
 @import "modules/m-hero";
 @import "modules/m-posts";
+@import "modules/m-archive";
 
+/* State */
 @import "state";

@@ -1,0 +1,83 @@
+header {
+  background: $header_background_color;
+
+  @include screen() {
+    margin-bottom: 3em;
+  }
+
+  @include ipad() {
+    margin-bottom: 3em;
+  }
+
+  @include iphone() {
+    margin-bottom: 1em;
+  }
+}
+
+// THE RESPONSIVE GRID
+
+.m-hero,
+.container {
+  @include outer-container;
+  margin: 0;
+  max-width: 1200px;
+
+  @include iphone() {
+    min-width: 320px;
+  }
+
+  @include screen() {
+    min-width: 1024px;
+    margin: 0 auto;
+  }
+}
+
+.m-hero-logo,
+.m-sidebar {
+
+  @include screen() {
+    @include span-columns(2);
+    @include shift(2);
+  }
+
+  @include ipad-portrait() {
+    @include span-columns(3);
+    @include shift(0);
+    padding-left: 2em;
+  }
+
+  @include iphone-landscape() {
+    @include span-columns(3);
+    @include shift(0);
+    padding-left: 1em;
+  }
+}
+
+.m-hero-selfdefinition,
+.m-posts,
+.m-post,
+.m-archive {
+
+  @include screen() {
+    @include span-columns(6);
+  }
+
+  @include ipad-portrait() {
+    @include span-columns(8);
+  }
+
+  @include iphone-landscape() {
+    @include span-columns(8);
+  }
+}
+
+.m-hero-selfdefinition,
+.m-posts,
+.m-post,
+.m-hero-logo,
+.m-sidebar,
+.m-archive {
+  @include iphone-portrait() {
+    width: 100%;
+  }
+}

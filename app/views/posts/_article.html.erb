@@ -1,7 +1,7 @@
+<% cache post do %>
 <article class="m-post-article">
-
 	<h2><%= link_to raw(Typogruby.improve(post.title)), post_url(post), class: "m-post-title" %></h2>
 
 	<%= raw post.body %>
-
 </article>
+<% end %>

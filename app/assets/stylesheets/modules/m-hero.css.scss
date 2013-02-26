@@ -1,58 +1,78 @@
 .m-hero-wrapper {
-  @include clearfix;
-
-  padding: 2em 0;
-  background: $header_background_color;
-}
-
-.m-hero-logo {
-  text-align: center;
-  position: fixed;
+  @include clearfix();
+  margin: 1.5em 0;
 }
 
 .m-hero-logolink {
-  width: 120px;
-  height: 120px;
+  width: 70%;
   display: inline-block;
-
-  background: url(image_path("logo_bg.svg")) no-repeat;
-  text-align: center;
+  margin: 0 auto;
 
   >img {
-    width: 80px;
-    margin-top: 30px;
+    width: 100%;
+  }
+
+  @include iphone-portrait() {
+    display: block;
+    width: 25%;
+    margin: .5em auto;
   }
 }
 
 .m-hero-selfdefinition {
-  width: $content_width;
-  margin-left: $right_column_left_margin;
 
   >p {
-    margin:.5em 0;
+    margin:0;
 
-    font-family: Source Sans Pro;
+    font-family: "Source Sans Pro";
     font-weight: 200;
     font-size: 2em;
+    line-height: 1.7em;
     color: $header_font_color;
 
+    @include hyphens(auto);
+
     >.m-hero-title {font-weight: 600;}
-    >.m-hero-author {font-weight: 400;}
+    >.m-hero-author,
     >.m-hero-remark {font-weight: 400;}
+
+    @include ipad-portrait() {
+      font-size: 1.9em;
+      line-height: 1.5em;
+    }
+
+    @include iphone {
+      text-align: center;
+    }
+
+    @include iphone-landscape() {
+      font-size: 1.2em;
+    }
+
+    @include iphone-portrait() {
+      width: 96%;
+      margin: 0 auto;
+      font-size: 1.2em;
+    }
 
   }
 }
 
 .m-hero-remark {
   background: $hero-remark-background;
+
   padding: 0 .1em;
   margin: 0 -.1em;
 }
 
-.remark-refresh img{
+.remark-refresh img {
   position: relativ;
   width: 25px;
   height: 20px;
   margin-top: -.1em;
   margin-left: .2em;
+}
+
+.refresh_circle {
+  fill: $hero-remark-circle;
 }

@@ -18,7 +18,7 @@
 			<ul id="ideasList">
 				<% @ideas.each do |post| %>
 				<li>
-					<%= link_to post["value"].title, edit_backend_post_path(post["value"].id), :class => "post_link" %>
+					<%= link_to post.title, edit_backend_post_path(post.id), :class => "post_link" %>
 				</li>
 				<% end %>
 			</ul>
@@ -30,7 +30,7 @@
 			<ul>	
 				<% @published.each do |post| %>
 				<li>
-					<%= link_to post["value"].title, edit_backend_post_path(post["value"].id) %>
+					<%= link_to post.title, edit_backend_post_path(post.id) %>
 				</li>		
 				<% end %>
 			</ul>

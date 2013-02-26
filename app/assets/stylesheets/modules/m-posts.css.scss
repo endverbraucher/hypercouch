@@ -1,10 +1,22 @@
 .m-posts,
 .m-post {
-  width: $content_width;
   margin-bottom: 10em;
 
   article {
     margin-bottom: 7em;
+
+    @include screen() {
+      max-width: 550px;
+    }
+
+    @include iphone() {
+      margin-bottom: 3em;
+    }
+
+    @include iphone-portrait() {
+      width: 96%;
+      margin: .75em auto 3em auto;
+    }
   }
 
   h2 {
@@ -14,40 +26,41 @@
   }
 
   a {
-    color: #000;
+    color: $post_link_color;
   }
 
   .m-post-title {
-    font-family: Source Sans Pro, Helvetica, Arial, sans-serif;
-    font-weight: 900;
+    color: $article_headline_color;
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    font-weight: 700;
     font-size: .8em;
     text-decoration: none;
 
-    color: $article_headline_color;
     border-bottom: 1px solid $article_headline_border_color;
 
     &:hover {
       border-bottom: 1px solid $article_headline_border_color_hover;
     }
-  }
 
-  .m-post-pubdate {
-    font-weight: 300;
-    color: #888;
+    @include iphone () {
+      font-size: .7em;
+    }
   }
 
   p {
     font-family: Lora, Georgia, Sans-Serif;
     font-weight: normal;
     font-size: 1.1em;
+    letter-spacing: 0.2px;
     line-height: 1.75em;
     color: $article_copy_color;
 
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;
-    word-wrap: hyphenate;
+    @include hyphens(auto);
+
+    @include iphone() {
+      font-size: 1em;
+      line-height: 1.5em;
+    }
   }
 
   blockquote {
@@ -62,9 +75,25 @@
   }
 }
 
+.m-post-article {
+  .m-post-title {
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.2em;
+    text-decoration: none;
+
+    color: $article_headline_color;
+    border-bottom: none;
+
+    @include iphone() {
+      font-size: .9em;
+    }
+  }
+}
+
 .m-posts-more {
   h3 {
-    color: #666;
+    color: $posts_more_color;
   }
 
   ul {

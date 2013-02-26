@@ -10,27 +10,25 @@
   <%= stylesheet_link_tag "application" %>
   <%= csrf_meta_tags %>
   <%= auto_discovery_link_tag :atom, feed_path %>
-  <meta name="google-site-verification"
-    content="HJm0ZJgwuIvaoKiDQXPb3XjcZRmnlHJLEd95Pm3PHTI" />
+  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+  <meta name="google-site-verification" content="HJm0ZJgwuIvaoKiDQXPb3XjcZRmnlHJLEd95Pm3PHTI" />
 </head>
 <body>
 
   <header>
     <section class="m-hero">
       <div class="m-hero-wrapper">
-
-        <div class="m-hero-logo left-column">
-          <%= link_to image_tag("slogo.svg", width: "100px"),
-            root_url, :class => "m-hero-logolink" %>
+        <div class="m-hero-logo">
+          <%= link_to image_tag("slogo2.svg", width: "100px", height:"100px"), root_url, :class => "m-hero-logolink" %>
         </div>
 
-        <div class="m-hero-selfdefinition right-column">
+        <div class="m-hero-selfdefinition">
           <p>
             <span class="m-hero-title">Slog.</span>
             Hallo, ich bin <span class="m-hero-author">Thomas Schrader</span>.
             <br />Ich bin <span class="m-hero-remark">von Beruf Endverbraucher.</span>
             <a href="#" class="remark-refresh">
-              <%= image_tag "refresh.svg", :title => "weiter" %>
+              <%= render "shared/refresh_icon" %>
             </a>
           </p>
         </div>
@@ -40,25 +38,26 @@
 
   <div class="container">
 
-    <aside class="m-sidebar left-column">
-
+    <aside class="m-sidebar">
       <nav class="m-sidebar-menu">
         <ul class="m-sidebar-menu-list">
           <!--
             TODO Link für Archiv einfügen!
           -->
           <li><%= link_to "slog.io", root_url %></li>
-          <li><a href="">Archiv</a></li>
+          <li><%= link_to "Archive", all_posts_url %></li>
           <li><a href="http://twitter.com/slogmen">@slogmen</a></li>
+          <li><a href="mailto:hallo@slog.io?subject=Guten Tag!">sag Hallo!</a></li>
           <li><%= link_to "feed", feed_url %></li>
         </ul>
       </nav>
 
-      <div class="m-sidebar-last-update"><%= @pub_date %></div>
-
+      <div class="m-sidebar-date">
+        <time pubdate datetime="<%= @pub_date.first %>"><%= @pub_date.last %></time>
+      </div>
     </aside>
 
-    <div class="content right-column">
+    <div class="content">
       <%= yield %>
     </div>
   </div>
