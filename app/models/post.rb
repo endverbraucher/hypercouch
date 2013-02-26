@@ -17,27 +17,24 @@ class Post
   before_save :slugify
   before_save :set_url_nil_if_empty
 
-  view :published, :type => :raw,
-        map: "function(doc) {
-              if (doc.ruby_class == 'Post' && doc.published)
-    	          emit(Date.parse(doc.published_at), doc);
-              }"
-
-  view :unpublished, :type => :raw,
-        map: "function(doc) {
-              if (doc.ruby_class == 'Post' && !doc.published)
-    	          emit(Date.parse(doc.created_at), doc);
-              }"
-
-  view :archive, :type => :raw,
-        map: "function(doc) {
-              if (doc.ruby_class == 'Post' && doc.published)
-    	          emit(Date.parse(doc.published_at), doc.title);
-              }"
+  view :published, :key => :published_at, :conditions => 'doc.published'
+  view :unpublished, :key => :published_at, :conditions => '!doc.published'
 
   def pubdate
     date = published_at.nil? ? created_at : published_at
     I18n.l date.to_date, format: :long
+  end
+
+  def pub_month
+    if published
+      I18n.l published_at.to_date, format: :only_month
+    end
+  end
+
+  def pub_year
+    if published
+      published_at.to_date.year
+    end
   end
 
   def body

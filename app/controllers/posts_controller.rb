@@ -1,12 +1,8 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = CouchPotato.database.view(
-      Post.published(limit: 11, descending: true))["rows"]
-    @pub_date = @posts.first["value"].pubdate;
-    @more_posts = CouchPotato.database.view(
-      Post.archive(stale: 'ok', limit: 11, descending: true,
-      :startkey => @posts.last["key"] ))["rows"]
+    @posts = CouchPotato.database.view(Post.published(limit: 15, descending: true))
+    @pub_date = [@posts.first.published_at.to_datetime.rfc3339, @posts.first.pubdate];
 
     respond_to do |format|
       format.html # index.html.erb
@@ -16,32 +12,39 @@ class PostsController < ApplicationController
 
   end
 
-  def more
-    @posts = CouchPotato.database.view(
-    Post.published(stale: 'ok', limit: 11, descending: true,
-      :startkey => params[:startkey].to_i))["rows"]
+  def all
+    posts = CouchPotato.database.view(Post.published(descending: true))
 
-    respond_to do |format|
-      format.js { render :content_type => 'text/javascript' }
+    @archive = Hash[
+      posts.group_by(&:pub_year).map{|year, posts|
+        [year, posts.group_by{|post| post.pub_month}]
+      }
+    ]
+
+    @pub_date = [posts.first.published_at.to_datetime.rfc3339,
+      posts.first.pubdate];
+
+      respond_to do |format|
+        format.html # show.html.erb
+      end
     end
-  end
 
-  def show
-    @post = CouchPotato.database.load_document(params[:slug])
-    @pub_date = @post.pubdate;
+    def show
+      @post = CouchPotato.database.load_document(params[:slug])
+      @pub_date = [@post.published_at.to_datetime.rfc3339, @post.pubdate];
 
-    respond_to do |format|
-      format.html # show.html.erb
+      respond_to do |format|
+        format.html # show.html.erb
+      end
     end
-  end
 
-  def sitemap
-    headers['Content-Type'] = 'application/xml'
-    @posts = CouchPotato.database.view(Post.published())["rows"]
+    def sitemap
+      headers['Content-Type'] = 'application/xml'
+      @posts = CouchPotato.database.view(Post.published())
 
-    respond_to do |format|
-      format.xml { @posts }
+      respond_to do |format|
+        format.xml { @posts }
+      end
     end
-  end
 
-end
+  end

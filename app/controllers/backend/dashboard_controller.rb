@@ -5,8 +5,8 @@ class Backend::DashboardController < ApplicationController
   
   def index
     @post = Post.new
-    @ideas = CouchPotato.database.view(Post.unpublished(descending: true))["rows"]
-    @published = CouchPotato.database.view(Post.published(descending: true))["rows"]
+    @ideas = CouchPotato.database.view(Post.unpublished(descending: true))
+    @published = CouchPotato.database.view(Post.published(descending: true))
     
     respond_to do |format|
       format.html # index.html.erb
