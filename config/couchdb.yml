@@ -10,4 +10,4 @@ test:
   database: <%= ENV['Couch'] %>/slog
 production:
   <<: *default
-  database: <%= ENV['Couch'] %>/slog
+  database: <%= ENV['Couch'] %>/slog_new
