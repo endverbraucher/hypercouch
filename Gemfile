@@ -8,16 +8,16 @@ gem 'json', '1.7.5'
 gem 'multi_json', '1.5.0'
 
 gem 'couch_potato'
+gem 'tzinfo'
+
 gem 'memcachier'
 gem 'dalli'
+gem 'cache_digests'
 
-gem 'tzinfo'
 gem 'kramdown'
 gem 'typogruby'
 gem 'therubyracer'
-gem 'jquery-rails'
 gem 'truncate_html'
-gem 'cache_digests'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -29,6 +29,7 @@ group :assets do
   gem 'neat', '~> 1.2.0'
   gem 'turbolinks'
   gem 'jquery-turbolinks'
+  gem 'jquery-rails'
 end
 
 group :development do
