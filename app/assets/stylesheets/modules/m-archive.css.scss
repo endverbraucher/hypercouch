@@ -1,23 +1,56 @@
-.m-archive {
+.m-archive-year {
+  margin: 2em 0 1em 0;
 
-  article {
-    margin-bottom: 2em;
+  font-family: Lora;
+  font-size: 2em;
+  font-weight: 900;
+  color: $archive_year_color;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.m-archive-month-listing
+{
+  padding-left: 0em;
+  margin-bottom: 3em;
+
+  width: 90%;
+}
+
+.m-archive-month {
+  font-weight: 300;
+  font-size: 1.8em;
+  margin: 0;
+  color: $archive-month-color;
+}
+
+.m-archive-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    margin: 1.3em 0;
+
+    &:first-child {
+      margin: .5em 0;
+    }
   }
 
-  h2 {
-    margin: 0;
-    padding: 0;
-    line-height: .8em !important;
-  }
-
-  .m-post-title {
+  a {
+    text-decoration: none;
+    color: $archive_item_color;
     font-weight: 700;
-    font-size: .8em !important;
+    font-size: 1.3em;
+    line-height: 1.5em;
 
-    border-bottom: none;
+    border-bottom: 1px solid $article_headline_border_color;
 
     &:hover {
-      border-bottom: none;
+      color: $archive_item_hover_color;
+      border-bottom: 1px solid $article_headline_border_color_hover;
     }
   }
 }

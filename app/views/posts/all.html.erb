@@ -4,15 +4,19 @@
     <h1 class="m-archive-year"><%= year.first %></h1>
 
     <% year[1].each do |month| %>
+
+    <div class="m-archive-month-listing">
       <h2 class="m-archive-month"><%= month.first %></h2>
 
-      <ul>
+      <ul class="m-archive-list">
         <% month[1].each do |post| %>
         <li>
           <%= link_to raw(Typogruby.improve(post.title)), post_url(post) %>
         </li>
         <% end %>
       </ul>
+    </div>
+
     <% end %>
   <% end %>
 </section>

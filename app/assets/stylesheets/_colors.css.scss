@@ -1,5 +1,5 @@
 $body_background: #f3f2ee;
-$body_color: #333;
+$body_color: #222;
 
 $header_background_color: #61B42A;
 $header_font_color: $body_background;
@@ -25,3 +25,8 @@ $article_headline_border_color_hover: lighten($article_headline_color, 40%);
 $article_copy_color: $body_color;
 $article_blockquote_color: lighten($article_copy_color, 5%);
 $article_blockquote_border_color: $article_headline_border_color;
+
+$archive_year_color: #888;
+$archive_month_color: #666;
+$archive_item_color: $body_color;
+$archive_item_hover_color: lighten($archive_item_color, 30%);
