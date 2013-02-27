@@ -28,6 +28,7 @@ group :assets do
   gem 'bootstrap_forms', '~> 2.0.8'
   gem 'neat', '~> 1.2.0'
   gem 'turbolinks'
+  gem 'jquery-turbolinks'
 end
 
 group :development do
