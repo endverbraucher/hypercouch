@@ -25,7 +25,7 @@ class PostsController < ApplicationController
     @pub_date = [posts.first.published_at.to_datetime.rfc3339,
       posts.first.pubdate];
 
-      stale? @posts.first["value"], public: true do
+      stale? posts.first, public: true do
         respond_to do |format|
           format.html # show.html.erb
         end
