@@ -4,14 +4,14 @@ var claims = [
   "liebe Dresden.",
   "studierte einst in Trier.",
   "wohne jetzt Köln.",
-  "liebe gut benutzbare Dinge.",
   "beobachte Menschen.",
+  "liebe gut benutzbare Dinge.",
   "beobachte Maschinen.",
-  "mach mal eine Pause.",
+  "beobachte die Dinge.",
   ];
 
 $(document).ready(function(){
-  $(".remark-refresh").click(function () {
+  $(".remark-refresh").click(function (event) {
     event.preventDefault();
 
     $("svg", this).rotate({
