@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = CouchPotato.database.view(Post.published(limit: 15, descending: true))
-    @pub_date = [@posts.first.published_at.to_datetime.rfc3339, @posts.first.pubdate];
+    @pub_date = [@posts.first.published_at.to_datetime.rfc3339, @posts.first.pub_date];
 
     stale? @posts.first, public: true do
       respond_to do |format|
@@ -23,7 +23,7 @@ class PostsController < ApplicationController
     }]
 
     @pub_date = [posts.first.published_at.to_datetime.rfc3339,
-      posts.first.pubdate];
+      posts.first.pub_date];
 
       stale? posts.first, public: true do
         respond_to do |format|
@@ -34,7 +34,7 @@ class PostsController < ApplicationController
 
     def show
       @post = CouchPotato.database.load_document(params[:slug])
-      @pub_date = [@post.published_at.to_datetime.rfc3339, @post.pubdate];
+      @pub_date = [@post.published_at.to_datetime.rfc3339, @post.pub_date];
 
       stale? @post, public: true do
         respond_to do |format|

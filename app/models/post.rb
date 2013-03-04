@@ -20,7 +20,18 @@ class Post
   before_save :slugify
   before_save :set_url_nil_if_empty
 
-  def pubdate
+  def body
+    unless mdown.nil?
+      self.content = Kramdown::Document.new(mdown).to_html
+      Typogruby.improve self.content
+    end
+  end
+
+  def improved_title
+    Typogruby.improve self.title
+  end
+
+  def pub_date
     date = published_at.nil? ? created_at : published_at
     I18n.l date.to_date, format: :long
   end
@@ -37,10 +48,6 @@ class Post
     end
   end
 
-  def body
-    Typogruby.improve content unless content.nil?
-  end
-
   def content_feed
     unless url.nil?
       source = '<p>via: <a href="$Source">Source</a></p>'.sub("$Source", url)
@@ -51,12 +58,6 @@ class Post
   end
 
   private
-
-    def convert_mdown
-      unless mdown.nil?
-        self.content = markdown2html mdown
-      end
-    end
 
     def set_publish_date
       if published_at.nil? && published
@@ -73,9 +74,4 @@ class Post
     def slugify
       self.id = title.parameterize
     end
-
-    def markdown2html(text)
-      mdown = Kramdown::Document.new(text).to_html
-    end
-
 end
