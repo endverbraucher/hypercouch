@@ -24,7 +24,7 @@
   >p {
     margin:0;
 
-    font-family: "Source Sans Pro";
+    font-family: $sans_font;
     font-weight: 200;
     font-size: 2em;
     line-height: 1.7em;
@@ -32,7 +32,7 @@
 
     @include hyphens(auto);
 
-    >.m-hero-title {font-weight: 600;}
+    >.m-hero-title {font-weight: 400;}
     >.m-hero-author,
     >.m-hero-remark {font-weight: 400;}
 

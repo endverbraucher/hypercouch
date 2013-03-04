@@ -1,9 +1,9 @@
 .m-archive-year {
   margin: 2em 0 1em 0;
 
-  font-family: Lora;
+  font-family: $serif_font;
   font-size: 2em;
-  font-weight: 900;
+  font-weight: 700;
   color: $archive_year_color;
 
   &:first-child {

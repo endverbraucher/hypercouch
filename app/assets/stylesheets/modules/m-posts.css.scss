@@ -48,7 +48,7 @@
   }
 
   p {
-    font-family: Lora, Georgia, Sans-Serif;
+    font-family: $serif_font;
     font-weight: normal;
     font-size: 1.1em;
     letter-spacing: 0.2px;
@@ -77,7 +77,7 @@
 
 .m-post-article {
   .m-post-title {
-    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    font-family: $sans_font;
     font-weight: 700;
     font-size: 1.2em;
     text-decoration: none;
@@ -114,5 +114,11 @@
         text-decoration: underline;
       }
     }
+  }
+
+  p {
+    font-family: $sans_font;
+    font-size: 1em;
+    margin: 2em 0;
   }
 }

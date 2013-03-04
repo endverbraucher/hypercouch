@@ -1,3 +1,6 @@
+$sans_font: 'Source Sans Pro', 'Open Sans', Helvetica, Arial, sans-serif;
+$serif_font: 'Lora', Georgia, serif;
+
 @mixin hyphens($value: "manual") {
   @each $prefix in -webkit-, -moz-, -o-, "" {
     #{$prefix}hyphens: $value;
