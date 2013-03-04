@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>
-    slog.io | <%= controller.action_name == "show" ? @post.title : "Von Beruf Endverbraucher" %>
+    slog.io | <%= controller.action_name == "show" ?
+    @post.title : "Von Beruf Endverbraucher" %>
   </title>
-  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic|Vollkorn:400italic,700italic,400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Cardo:400,400italic,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,400italic,600italic,700italic|Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag "application" %>
   <%= csrf_meta_tags %>
   <%= auto_discovery_link_tag :atom, feed_path %>
@@ -26,8 +26,8 @@
           <p>
             <span class="m-hero-title">Slog.</span>
             Hallo, ich bin <span class="m-hero-author">Thomas Schrader</span>.
-            <br />Ich bin <span class="m-hero-remark">von Beruf Endverbraucher.</span>
-            <a href="#" class="remark-refresh">
+            <br />Ich <span class="m-hero-remark">bin von Beruf Endverbraucher.</span>
+            <a href="" class="remark-refresh">
               <%= render "shared/refresh_icon" %>
             </a>
           </p>
