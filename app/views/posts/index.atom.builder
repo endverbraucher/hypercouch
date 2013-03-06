@@ -13,7 +13,7 @@ atom_feed do |feed|
       end
 
       if post.url
-        entry.link post.url, :rel => 'via'
+        entry.link :href => post.url, :title => post.url, :rel => 'via'
       end
     end
   end
