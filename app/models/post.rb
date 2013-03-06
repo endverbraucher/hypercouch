@@ -1,3 +1,6 @@
+require 'kramdown'
+require 'typogruby'
+
 class Post
   include CouchPotato::Persistence
   include ActiveModel::MassAssignmentSecurity
