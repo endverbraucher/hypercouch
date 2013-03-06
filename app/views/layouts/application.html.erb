@@ -16,6 +16,7 @@
 <body>
 
   <header data-no-turbolink>
+
     <section class="m-hero">
       <div class="m-hero-wrapper">
         <div class="m-hero-logo">
@@ -48,10 +49,6 @@
           <li><%= link_to "feed", feed_url %></li>
         </ul>
       </nav>
-
-      <div class="m-sidebar-date">
-        <time pubdate datetime="<%= @pub_date.first %>"><%= @pub_date.last %></time>
-      </div>
     </aside>
 
     <div class="content">

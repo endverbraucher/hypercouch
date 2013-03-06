@@ -1,6 +1,6 @@
 .m-sidebar-menu-list {
   margin: 0;
-  padding: 0;
+  padding: 2em 0;
   list-style-type: none;
   @include clearfix();
 
@@ -10,11 +10,13 @@
   }
 
   >li {
+    margin: .5em 0;
+
+    &:first-child {margin-top: 0;}
 
     >a {
       display: inline-block;
       padding: .25em 1em;
-      margin: .5em 0;
 
       background: $menu_item_border_color;
       border-radius: 4px;
@@ -46,27 +48,5 @@
       float: left;
       margin: 0 .15em;
     }
-  }
-}
-
-.m-sidebar-date {
-  font-weight: 400;
-  color: $last_update_color;
-  margin-top: 170px;
-
-  @include ipad-portrait() {
-    margin-top: 480px;
-  }
-
-  @include ipad-landscape() {
-    margin-top: 200px;
-  }
-
-  @include iphone-landscape() {
-    font-size: .7em;
-  }
-
-  @include iphone-portrait() {
-    display: none;
   }
 }
