@@ -3,7 +3,7 @@ var claims = [
   "löse gern Probleme.",
   "liebe Dresden.",
   "studierte einst in Trier.",
-  "wohne jetzt Köln.",
+  "wohne jetzt in Köln.",
   "beobachte Menschen.",
   "liebe gut benutzbare Dinge.",
   "beobachte Maschinen.",
