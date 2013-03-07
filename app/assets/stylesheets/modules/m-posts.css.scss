@@ -19,7 +19,7 @@
     }
 
     time {
-      color: #666;
+      color: $article_date_color;
       font-weight: 200;
       font-size: .9em;
     }
@@ -53,12 +53,14 @@
     }
   }
 
-  p {
+  p, li {
     font-family: $serif_font;
     font-weight: normal;
     font-size: 1.1em;
     letter-spacing: 0.2px;
     line-height: 1.75em;
+    margin-bottom: 1em;
+
     color: $article_copy_color;
 
     @include hyphens(auto);
@@ -78,6 +80,15 @@
       font-style: italic;
       color: $article_blockquote_color;
     }
+  }
+
+  ul, ol {
+    margin: 1em 0;
+    padding: 0;
+  }
+
+  ul {
+    list-style-type: square;
   }
 }
 
