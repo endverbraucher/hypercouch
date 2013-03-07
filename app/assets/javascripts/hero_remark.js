@@ -10,21 +10,19 @@ var claims = [
   "beobachte die Dinge.",
   ];
 
-$(document).ready(function(){
-  $(".remark-refresh").click(function (event) {
-    event.preventDefault();
+$(document).on('click', '.remark-refresh', function(event) {
+  event.preventDefault();
 
-    $("svg", this).rotate({
-      duration: 1100,
-      angle: 0,
-      animateTo:360,
-      callback: function() {
-        $(".m-hero-remark").hide().html(claims.shift()).fadeIn();
+  $("svg", this).rotate({
+    duration: 1100,
+    angle: 0,
+    animateTo:360,
+    callback: function() {
+      $(".m-hero-remark").hide().html(claims.shift()).fadeIn();
 
-        if (claims.length == 0) {
-          $(".remark-refresh").remove();
-        };
-      }
-    });
-  })
-});
+      if (claims.length == 0) {
+        $(".remark-refresh").remove();
+      };
+    }
+  });
+})
