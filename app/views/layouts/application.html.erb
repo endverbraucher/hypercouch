@@ -6,9 +6,10 @@
     slog.io | <%= controller.action_name == "show" ?
     @post.title : "Von Beruf Endverbraucher" %>
   </title>
+  <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,400italic,600italic,700italic|Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag "application" %>
-  <%= csrf_meta_tags %>
+  <%= javascript_include_tag "application" %>
   <%= auto_discovery_link_tag :atom, feed_path %>
   <meta name="viewport" content="initial-scale=1.0, width=device-width" />
   <meta name="google-site-verification" content="HJm0ZJgwuIvaoKiDQXPb3XjcZRmnlHJLEd95Pm3PHTI" />
@@ -55,6 +56,5 @@
     </div>
   </div>
 
-  <%= javascript_include_tag "application" %>
 </body>
 </html>
