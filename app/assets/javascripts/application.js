@@ -1,9 +1,9 @@
 //= require jquery
-//= require jquery_ujs
-//= require turbolinks
 //= require jquery.turbolinks
+//= require jquery_ujs
 //= require jquery_rotate
 //= require hero_remark
+//= require turbolinks
 
 String.prototype.rot13 = function(){
     return this.replace(/[a-zA-Z]/g, function(c){
