@@ -7,6 +7,10 @@ class Post
 
   attr_accessible :title, :url, :slug, :content, :mdown
 
+  before_save :slugify
+  before_save :publish
+  before_save :set_url_nil_if_empty
+
   property :title
   property :url
   property :slug
