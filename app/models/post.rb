@@ -89,6 +89,8 @@ class Post
       end
     end
     def slugify
-      self.id = title.parameterize
+      unless self.state == "published"
+        self.id = title.parameterize
+      end
     end
 end
