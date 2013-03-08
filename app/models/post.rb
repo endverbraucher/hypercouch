@@ -74,13 +74,6 @@ class Post
     self.content = nil
   end
 
-
-    def set_url_nil_if_empty
-      if url.to_s.empty?
-        self.url = nil
-      end
-    end
-
   private
 
     def set_publish_date
@@ -88,6 +81,13 @@ class Post
         self.published_at = Time.now
       end
     end
+
+    def set_url_nil_if_empty
+      if url.to_s.empty?
+        self.url = nil
+      end
+    end
+
     def slugify
       unless self.state == "published"
         self.id = title.parameterize
