@@ -8,8 +8,10 @@ class Backend::PostsController < Backend::BaseController
   def edit
     @post = CouchPotato.database.load_document(params[:id])
 
-    respond_to do |format|
-      format.html
+    stale? @post, public: true do
+      respond_to do |format|
+        format.html
+      end
     end
   end
 
