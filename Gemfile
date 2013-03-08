@@ -22,7 +22,7 @@ gem 'typogruby', require: false
 group :assets do
   gem 'uglifier'
   gem 'sass-rails',   '~> 3.2'
-  gem 'bootstrap-sass', '~> 2.3.0.0'
+  gem 'bootstrap-sass', '~> 2.3.0.1'
   gem 'bootstrap_forms', '~> 2.0.8'
   gem 'neat', '~> 1.2.0'
   gem 'turbolinks'
@@ -35,8 +35,8 @@ group :development do
   gem 'binding_of_caller'
   gem 'meta_request'
   gem 'routes'
-  gem 'pry-rails', require: false
-  gem 'pry-remote', require: false
+  gem 'pry-rails'
+  gem 'pry-remote'
 end
 
 # To use ActiveModel has_secure_password

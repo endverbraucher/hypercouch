@@ -65,7 +65,7 @@ GEM
     dalli (2.6.2)
     debug_inspector (0.0.2)
     erubis (2.7.0)
-    eventmachine (1.0.1)
+    eventmachine (1.0.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
     hike (1.2.1)
@@ -171,7 +171,7 @@ DEPENDENCIES
   bcrypt-ruby
   better_errors
   binding_of_caller
-  bootstrap-sass (~> 2.3.0.0)
+  bootstrap-sass (~> 2.3.0.1)
   bootstrap_forms (~> 2.0.8)
   cache_digests
   couch_potato
