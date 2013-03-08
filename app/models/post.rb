@@ -69,6 +69,18 @@ class Post
         self.published_at = Time.now
       end
     end
+  def update_properties
+    if self.published
+      self.state = "published"
+    end
+
+    if self.published_at.nil? && !self.published
+      self.state = "idea"
+    end
+
+    self.content = nil
+  end
+
 
     def set_url_nil_if_empty
       if url.to_s.empty?
