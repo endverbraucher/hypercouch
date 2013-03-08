@@ -22,7 +22,7 @@
 			<%= f.button "Idea", :value => 'idea', :type => "button", :class => "btn" %>
       <%= f.button "Review", :value => 'in_review', :type => "button", :class => "btn"%>
 
-      <% if self.state == "published" || @post.publishable? %>
+      <% if @post.state == "published" || @post.publishable? %>
       <%= f.button "Publish",:value => 'published', :type => "button", :class => "btn" %>
       <% end %>
 		</div>
