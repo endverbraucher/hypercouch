@@ -1,0 +1,6 @@
+<% cache post do %>
+<li>
+    <%= link_to raw(post.improved_title), edit_backend_post_path(post.id), :class => "post_link" %>
+    <%= link_to "delete", backend_post_path(post.id), :method => :delete, :remote => :true, :class => "btn btn-danger btn-mini delete-button pull-right" %>
+</li>
+<% end %>

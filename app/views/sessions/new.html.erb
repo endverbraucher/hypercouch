@@ -1,37 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>slog.io | Von Beruf Endverbraucher.</title>
-	<meta charset="UTF-8">
-	<%= stylesheet_link_tag "bootstrap_and_overrides" %>
-	<%= stylesheet_link_tag params[:controller] %>
-	<%= csrf_meta_tags %>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+  <title>slog.io | Von Beruf Endverbraucher.</title>
+  <meta charset="UTF-8">
+  <%= stylesheet_link_tag "backend/base" %>
+  <%= stylesheet_link_tag "backend/sessions" %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 </head>
 <body>
-	<div class="loginBox well">
-		<h2>slogin</h2>
-		
-		<% if flash[:alert] %>
-		<div class= "alert alert-error">			
-			<%= flash[:alert] %>
-		</div>
-		<% end %>
-		
-		<div class="login-form">
-			<%= form_tag do %>
-			<fieldset>
-				<div class="controls">
-					<%= text_field_tag :name, params[:name], placeholder: "Name" %>
-				</div>
-				<div class="controls">
-					<%= password_field_tag :password, params[:password], placeholder: "Password" %>
-				</div>
-				<%= submit_tag "Login", :class => "btn" %>
-			</fieldset>
-			<% end %>
-		</div>
-	</div>
-	
+
+  <div class="container">
+
+      <%= form_tag login_path, :method => 'post', :class => "form-signin" do %>
+        <h2 class="form-signin-heading">Please slog in</h2>
+
+        <% if flash[:alert] %>
+        <div class= "alert alert-error">
+          <%= flash[:alert] %>
+        </div>
+        <% end %>
+
+        <%= text_field_tag :name, params[:name], placeholder: "Name", class: "input-block-level" %>
+        <%= password_field_tag :password, params[:password], placeholder: "Password", class: "input-block-level" %>
+
+        <%= submit_tag "Slogin", :class => "btn" %>
+      <% end %>
+
+  </div> <!-- /container -->
 </body>
 </html>

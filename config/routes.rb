@@ -21,7 +21,6 @@ Hypercouch::Application.routes.draw do
   # Backend Urls
   namespace :backend, :path => 'slogend' do
     resources :posts
-    get '/posts/:id/publish' => 'posts#publish', :as => :publish
     post '/idea/new' => 'dashboard#new_idea', :as => :new_idea
 
     root :to => 'dashboard#index'

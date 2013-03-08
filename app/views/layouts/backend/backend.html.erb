@@ -4,35 +4,102 @@
     <title>slog.io - Backend</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%= stylesheet_link_tag    "backend/application" %>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,400italic,600italic,700italic|Source+Code+Pro:300,400,500' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag "backend/base" %>
+    <%= javascript_include_tag "backend/base" %>
     <%= auto_discovery_link_tag :atom, feed_path %>
     <%= csrf_meta_tags %>
-    <script src="http://use.edgefonts.net/source-sans-pro.js"></script>
 </head>
 <body>
-	
-	<div class="container-fluid">		
-		<div class="row-fluid" >			
-			<div class="span2 sidebar">
-		        <div class="logo">
-					<div class="logoLink">
-						<%= link_to image_tag("slogo_small.png", width: "70px"), backend_root_url %>
-					</div>
-					
-					<div id="buttons">
-						<%= link_to raw("<i class='icon-file'></i>  visit slog"), root_url, target: "_blank", :class => "btn btn-block" %>
-						<%= link_to raw("<i class='icon-off'></i>  slog out"), logout_url, :class => "btn btn-block" %>
-					</div>
-		        </div>
+
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <p class="navbar-text">
+            <%= link_to "slog out", logout_url, class: "pull-right" %>
+        </p>
+        <ul class="nav">
+          <li class="active">
+            <%= link_to "Hypercouch", backend_root_url, class: "brand" %>
+          </li>
+          <li><%= link_to "visit slog", root_url, target: "_blank" %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+	<div class="container-fluid">
+		<div class="row-fluid" >
+
+			<div class="span3 sidebar">
+        <ul class="nav nav-pills" id="sidebarTabs">
+    			<li class="active">
+            <a href="#ideas" data-toggle="tab">Ideas</a>
+          </li>
+          <li>
+            <a href="#in_review" data-toggle="tab">In Review</a>
+          </li>
+    			<li>
+            <a href="#published" data-toggle="tab">Published</a>
+          </li>
+        </ul>
+
+      	<div class="tab-content">
+
+      		<div id="ideas" class="tab-pane active">
+
+            <small>NEW IDEA</small>
+
+      			<%=  form_for([:backend, @new_post], :url => backend_new_idea_url,	:remote => true, :html => { :id => 'idea_form'}) do |f| %>
+              <%= f.text_field :title, :placeholder => 'add a new idea here' %>
+      			<% end %>
+
+            <small>RECENT IDEAS <a href="#" class="btn btn-small pull-right edit-Button" data-toggle="button">edit</a></small>
+
+      			<ul class="post_list">
+      				<% @ideas.each do |post| %>
+              <%= render :partial => "backend/posts/post_item", :locals => { :post => post } %>
+      				<% end %>
+      			</ul>
+
+      		</div>
+
+      		<div id="in_review" class="tab-pane">
+            <small>POSTS IN REVIEW <a href="#" class="btn btn-small pull-right edit-Button" data-toggle="button">edit</a></small>
+      			<ul class="post_list">
+      				<% @in_review.each do |post| %>
+              <%= render :partial => "backend/posts/post_item", :locals => { :post => post } %>
+      				<% end %>
+      			</ul>
+      		</div>
+
+      		<div id="published" class="tab-pane">
+            <small>PUBLISHED POSTS <a href="#" class="btn btn-small pull-right edit-Button" data-toggle="button">edit</a></small>
+      			<ul class="post_list">
+      				<% @published.each do |post| %>
+              <%= render :partial => "backend/posts/post_item", :locals => { :post => post } %>
+      				<% end %>
+      			</ul>
+      		</div>
+
+      	</div>
+
 			</div>
-			
-	        <div class="yourPosts span9">
-	            <%= yield %>
-	        </div>		
-		</div>		
+
+	    <div class="span8 offset3">
+
+        <% if flash[:alert] %>
+          <div class= "alert alert-error">
+            <%= flash[:alert] %>
+          </div>
+        <% end %>
+
+        <%= yield %>
+
+	    </div>
+
+		</div>
 	</div>
-	
-    <%= javascript_include_tag "backend/application" %>
-	
+
 </body>
 </html>
