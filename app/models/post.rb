@@ -18,14 +18,12 @@ class Post
   property :mdown
   property :published_at, :type => Time
   property :published, :type => :boolean, :default => false
+  property :state
 
   view :published, :key => :published_at, :conditions => 'doc.published'
-  view :unpublished, :key => :published_at, :conditions => '!doc.published'
-
-  before_save :convert_mdown
-  before_save :set_publish_date
-  before_save :slugify
-  before_save :set_url_nil_if_empty
+  view :in_review, :key => :created_at, :conditions => 'doc.state === "in_review"'
+  view :ideas, :key => :created_at, :conditions => 'doc.state === "idea" || !doc.published && doc.state !== "in_review"'
+  view :all, :key => :created_at
 
   def body
     unless mdown.nil?
