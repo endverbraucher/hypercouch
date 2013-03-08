@@ -62,13 +62,6 @@ class Post
     return content
   end
 
-  private
-
-    def set_publish_date
-      if published_at.nil? && published
-        self.published_at = Time.now
-      end
-    end
   def update_properties
     if self.published
       self.state = "published"
@@ -88,6 +81,13 @@ class Post
       end
     end
 
+  private
+
+    def set_publish_date
+      if self.published_at.nil? && self.state == "published"
+        self.published_at = Time.now
+      end
+    end
     def slugify
       self.id = title.parameterize
     end
