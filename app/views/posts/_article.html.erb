@@ -1,8 +1,13 @@
 <% cache post do %>
 <article class="m-post-article">
+
+  <% unless post.published_at.nil? %>
   <time pubdate datetime="<%= post.published_at.to_datetime.rfc3339 %>"><%= post.pub_date %></time>
+  <% end %>
+
 	<h2><%= link_to raw(post.improved_title), post_url(post), class: "m-post-title" %></h2>
 
 	<%= raw post.body %>
+
 </article>
 <% end %>

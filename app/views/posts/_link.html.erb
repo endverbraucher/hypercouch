@@ -1,10 +1,15 @@
 <% cache post do %>
 <article class="m-post-link">
+
+  <% unless post.published_at.nil? %>
   <time pubdate datetime="<%= post.published_at.to_datetime.rfc3339 %>"><%= post.pub_date %></time>
+  <% end %>
+
   <h2>
-		<%= link_to raw(post.improved_title), post.url, class: "m-post-title" %>&nbsp;<%= link_to image_tag("anchor.svg", size: "16x10"), post_path(post), class: "permalink" %>
-	</h2>
+    <%= link_to raw(post.improved_title), post.url, class: "m-post-title" %>&nbsp;<%= link_to image_tag("anchor.svg", size: "16x10"), post_path(post), class: "permalink" %>
+  </h2>
 
 	<%= raw post.body %>
+
 </article>
 <% end %>
