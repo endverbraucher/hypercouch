@@ -33,7 +33,7 @@
 
     <div class="pull-right">
       <%= link_to "delete", backend_post_path(@post.id), :method => :delete, :class => "btn btn-danger delete-button" %>
-      <%= link_to "Preview", post_path(@post), :target => "_blank",:class => "btn" %>
+      <%= link_to "Preview", preview_post_path(@post), :target => "_blank",:class => "btn" %>
     </div>
 
 		<%= f.hidden_field :state, :name => "state" %>

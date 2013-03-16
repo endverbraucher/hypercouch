@@ -26,6 +26,8 @@ Hypercouch::Application.routes.draw do
     root :to => 'dashboard#index'
   end
 
+  get '/preview/:slug' => 'backend/posts#show', :as => :preview_post
+
   # The Hypercouch himself.
   controller :posts do
     get 'posts' => :index

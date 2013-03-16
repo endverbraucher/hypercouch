@@ -1,7 +1,7 @@
 <section class="m-post">
   <% if @post.url %>
-  	<%= render :partial => "link", :locals => { :post => @post } %>
+  	<%= render :partial => "posts/link", :locals => { :post => @post } %>
   <% else %>
-  	<%= render :partial => "article", :locals => { :post => @post } %>
+  	<%= render :partial => "posts/article", :locals => { :post => @post } %>
   <% end %>
 </section>
