@@ -5,7 +5,7 @@ class Post
   include CouchPotato::Persistence
   include ActiveModel::MassAssignmentSecurity
 
-  attr_accessible :title, :url, :slug, :content, :mdown
+  attr_accessible :title, :url, :slug, :mdown
 
   before_save :slugify
   before_save :set_publish_date
@@ -14,7 +14,6 @@ class Post
   property :title
   property :url
   property :slug
-  property :content
   property :mdown
   property :published_at, :type => Time
   property :published, :type => :boolean, :default => false
@@ -27,8 +26,7 @@ class Post
 
   def body
     unless mdown.nil?
-      self.content = Kramdown::Document.new(mdown).to_html
-      Typogruby.improve self.content
+      body = Typogruby.improve(Kramdown::Document.new(mdown).to_html)
     end
   end
 
@@ -60,13 +58,12 @@ class Post
     end
   end
 
-  def content_feed
+  def feed_body
     unless url.nil?
-      source = '<p>via: <a href="$Source">Source</a></p>'.sub("$Source", url)
-      return content + source
+      return body + '<p>via: <a href="$Source">Source</a></p>'.sub("$Source", url)
     end
 
-    return content
+    return body
   end
 
   def update_properties
