@@ -8,9 +8,12 @@ class Backend::PostsController < Backend::BaseController
   def show
       @post = CouchPotato.database.load_document(params[:slug])
 
-      respond_to do |format|
-        format.html { render :layout => 'application', :template => 'posts/show' }
+      stale? @post, public: true do
+        respond_to do |format|
+          format.html # show.html.erb
+        end
       end
+
   end
 
   def edit
