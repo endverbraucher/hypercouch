@@ -10,7 +10,7 @@ class Backend::PostsController < Backend::BaseController
 
       stale? @post, public: true do
         respond_to do |format|
-          format.html # show.html.erb
+          format.html { render :layout => 'application', :template => 'posts/show' }
         end
       end
 
