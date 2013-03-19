@@ -6,14 +6,11 @@ class Backend::PostsController < Backend::BaseController
   before_filter :initialize_sidebar, :only => [:edit, :new]
 
   def show
-      @post = CouchPotato.database.load_document(params[:slug])
+    @post = CouchPotato.database.load_document(params[:slug])
 
-      stale? @post, public: true do
-        respond_to do |format|
-          format.html { render :layout => 'application', :template => 'posts/show' }
-        end
-      end
-
+    respond_to do |format|
+      format.html { render :layout => 'application', :template => 'posts/show' }
+    end
   end
 
   def edit
@@ -43,6 +40,8 @@ class Backend::PostsController < Backend::BaseController
     if CouchPotato.database.save_document save_post
       redirect_to edit_backend_post_path(save_post)
     end
+
+    expires_now
   end
 
   def new
