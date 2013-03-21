@@ -51,7 +51,7 @@ class Post
   end
 
   def publishable?
-    start_publishing_time = self.created_at + 3.hours
+    start_publishing_time = self.updated_at + 3.hours
     if self.state == "in_review" && start_publishing_time <= Time.now
       true
     end
