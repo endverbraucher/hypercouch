@@ -39,13 +39,13 @@ class Post
   end
 
   def pub_month
-    if published
+    if state == "published"
       I18n.l published_at.to_date, format: :only_month
     end
   end
 
   def pub_year
-    if published
+    if state == "published"
       published_at.to_date.year
     end
   end
