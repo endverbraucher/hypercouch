@@ -30,7 +30,9 @@
             Hallo, ich bin <span class="m-hero-author">Thomas Schrader</span>.
             <br />Ich <span class="m-hero-remark">bin von Beruf Endverbraucher.</span>
             <a href="" class="remark-refresh">
+            <% cache do %>
               <%= render "shared/refresh_icon" %>
+            <% end %>
             </a>
           </p>
         </div>
