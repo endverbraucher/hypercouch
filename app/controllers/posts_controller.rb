@@ -18,7 +18,7 @@ class PostsController < ApplicationController
 
     @archive = Hash[
       @posts.group_by(&:pub_year).map{|year, posts|
-        [year, @posts.group_by{|post| post.pub_month}]
+        [year, posts.group_by{|post| post.pub_month}]
       }]
 
       stale? @posts.first, public: true do
