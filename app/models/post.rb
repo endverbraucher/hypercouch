@@ -19,9 +19,9 @@ class Post
   property :published, :type => :boolean, :default => false
   property :state
 
-  view :published, :key => :published_at, :conditions => 'doc.published'
+  view :published, :key => :published_at, :conditions => 'doc.state === "published"'
   view :in_review, :key => :created_at, :conditions => 'doc.state === "in_review"'
-  view :ideas, :key => :created_at, :conditions => 'doc.state === "idea" || !doc.published && doc.state !== "in_review"'
+  view :ideas, :key => :created_at, :conditions => 'doc.state === "idea" || doc.state !== "published" && doc.state !== "in_review"'
   view :all, :key => :created_at
 
   def body
