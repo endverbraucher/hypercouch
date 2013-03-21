@@ -1,7 +1,9 @@
+<% cache @post.updated_at do %>
 <section class="m-post">
-  <% if @post.url %>
-  	<%= render :partial => "posts/link", :locals => { :post => @post } %>
-  <% else %>
+  <% if @post.url.blank? %>
   	<%= render :partial => "posts/article", :locals => { :post => @post } %>
+  <% else %>
+  	<%= render :partial => "posts/link", :locals => { :post => @post } %>
   <% end %>
 </section>
+<% end %>

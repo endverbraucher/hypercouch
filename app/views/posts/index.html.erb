@@ -1,10 +1,11 @@
-<% cache @posts do %>
 <section class="m-posts">
-  <% @posts[0..9].each do |post|
-    	if post.url %>
-    		<%= render :partial => "link", :locals => { :post => post } %>
-    <% else %>
-    		<%= render :partial => "article", :locals => { :post => post } %>
+  <% cache @posts.first.updated_at do %>
+    <% @posts[0..9].each do |post|
+      	if post.url.blank? %>
+      		<%= render :partial => "article", :locals => { :post => post } %>
+      <% else %>
+      		<%= render :partial => "link", :locals => { :post => post } %>
+      <% end %>
     <% end %>
   <% end %>
 
@@ -21,4 +22,3 @@
   </section>
 
 </section>
-<% end %>
