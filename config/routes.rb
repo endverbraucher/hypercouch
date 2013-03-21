@@ -1,5 +1,7 @@
 Hypercouch::Application.routes.draw do
 
+  root :to => 'posts#index'
+
   # Feed Urls
   match '/feed' => 'posts#index', :as => :feed, defaults: { format: 'atom' }
   match '/atom/1' => redirect('/feed')
@@ -20,13 +22,11 @@ Hypercouch::Application.routes.draw do
 
   # Backend Urls
   namespace :backend, :path => 'slogend' do
+    root :to => 'dashboard#index'
+
     resources :posts
     post '/idea/new' => 'dashboard#new_idea', :as => :new_idea
-
-    root :to => 'dashboard#index'
   end
-
-  get '/preview/:slug' => 'backend/posts#show', :as => :preview_post
 
   # The Hypercouch himself.
   controller :posts do
@@ -34,8 +34,5 @@ Hypercouch::Application.routes.draw do
     get '/archive' => :all, :as => :all_posts
     get ':slug' => :show, as: :post
   end
-
-  root :to => 'posts#index'
-
 
 end
