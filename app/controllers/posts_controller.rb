@@ -14,16 +14,16 @@ class PostsController < ApplicationController
   end
 
   def all
-    posts = CouchPotato.database.view(Post.published(descending: true))
+    @posts = CouchPotato.database.view(Post.published(descending: true))
 
     @archive = Hash[
-      posts.group_by(&:pub_year).map{|year, posts|
-        [year, posts.group_by{|post| post.pub_month}]
-    }]
+      @posts.group_by(&:pub_year).map{|year, posts|
+        [year, @posts.group_by{|post| post.pub_month}]
+      }]
 
-      stale? posts.first, public: true do
+      stale? @posts.first, public: true do
         respond_to do |format|
-          format.html # show.html.erb
+          format.html
         end
       end
     end
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
 
       stale? @post, public: true do
         respond_to do |format|
-          format.html # show.html.erb
+          format.html
         end
       end
     end
