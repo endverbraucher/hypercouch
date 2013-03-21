@@ -16,10 +16,8 @@ class Backend::PostsController < Backend::BaseController
   def edit
     @post = CouchPotato.database.load_document(params[:id])
 
-    stale? @post, public: true do
-      respond_to do |format|
-        format.html
-      end
+    respond_to do |format|
+      format.html
     end
   end
 
@@ -41,7 +39,6 @@ class Backend::PostsController < Backend::BaseController
       redirect_to edit_backend_post_path(save_post)
     end
 
-    expires_now
   end
 
   def new
