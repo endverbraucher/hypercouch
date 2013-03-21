@@ -78,6 +78,10 @@ class Post
     self.content = nil
   end
 
+  def cache_key
+    return self.id + "-" + self.updated_at.to_s
+  end
+
   private
 
     def set_publish_date
