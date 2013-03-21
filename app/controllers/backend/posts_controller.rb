@@ -5,14 +5,6 @@ class Backend::PostsController < Backend::BaseController
   before_filter :authorize
   before_filter :initialize_sidebar, :only => [:edit, :new]
 
-  def show
-    @post = CouchPotato.database.load_document(params[:slug])
-
-    respond_to do |format|
-      format.html { render :layout => 'application', :template => 'posts/show' }
-    end
-  end
-
   def edit
     @post = CouchPotato.database.load_document(params[:id])
 
