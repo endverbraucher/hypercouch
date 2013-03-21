@@ -5,7 +5,7 @@ class Post
   include CouchPotato::Persistence
   include ActiveModel::MassAssignmentSecurity
 
-  attr_accessible :title, :url, :slug, :mdown
+  attr_accessible :title, :url, :mdown
 
   before_save :slugify
   before_save :set_publish_date
@@ -13,7 +13,6 @@ class Post
 
   property :title
   property :url
-  property :slug
   property :mdown
   property :published_at, :type => Time
   property :published, :type => :boolean, :default => false
@@ -21,7 +20,7 @@ class Post
 
   view :published, :key => :published_at, :conditions => 'doc.state === "published"'
   view :in_review, :key => :created_at, :conditions => 'doc.state === "in_review"'
-  view :ideas, :key => :created_at, :conditions => 'doc.state === "idea" || doc.state !== "published" && doc.state !== "in_review"'
+  view :ideas, :key => :created_at, :conditions => 'doc.state === "idea"'
   view :all, :key => :created_at
 
   def body
