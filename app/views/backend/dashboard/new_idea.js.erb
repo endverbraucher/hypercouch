@@ -1,2 +1,2 @@
 $('#post_title').val('');
-$('#ideas .post_list').prepend('<%= escape_javascript(render :partial => "backend/posts/post_item", :locals => {:post =>@post} ) %>').fadeIn();
+$('#ideas .post_list').prepend('<%= escape_javascript(render :partial => "backend/posts/post", :locals => {:post =>@post} ) %>').fadeIn();
