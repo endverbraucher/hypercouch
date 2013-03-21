@@ -1,4 +1,4 @@
-<% cache @posts.first.updated_at do %>
+<% cache @posts.first.cache_key do %>
 <section class="m-archive">
   <% @archive.each do |year| %>
     <h1 class="m-archive-year"><%= year.first %></h1>

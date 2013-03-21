@@ -1,4 +1,4 @@
-<% cache @post.updated_at do %>
+<% cache @post.cache_key do %>
 <section class="m-post">
   <% if @post.url.blank? %>
   	<%= render :partial => "posts/article", :locals => { :post => @post } %>

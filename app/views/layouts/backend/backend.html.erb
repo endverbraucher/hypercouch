@@ -57,7 +57,7 @@
             <small>RECENT IDEAS <a href="#" class="btn btn-small pull-right edit-Button" data-toggle="button">edit</a></small>
 
       			<ul class="post_list">
-            <% cache @ideas.first.updated_at do %>
+            <% cache @ideas.first.cache_key do %>
               <%= render :partial => "backend/posts/post", :collection => @ideas %>
             <% end %>
       			</ul>
@@ -67,7 +67,7 @@
       		<div id="in_review" class="tab-pane">
             <small>POSTS IN REVIEW <a href="#" class="btn btn-small pull-right edit-Button" data-toggle="button">edit</a></small>
       			<ul class="post_list">
-            <% cache @in_review.first.updated_at do %>
+            <% cache @in_review.first.cache_key do %>
               <%= render :partial => "backend/posts/post", :collection => @in_review %>
             <% end %>
       			</ul>
@@ -76,7 +76,7 @@
       		<div id="published" class="tab-pane">
             <small>PUBLISHED POSTS <a href="#" class="btn btn-small pull-right edit-Button" data-toggle="button">edit</a></small>
       			<ul class="post_list">
-            <% cache @published.first.updated_at do%>
+            <% cache @published.first.cache_key do%>
               <%= render :partial => "backend/posts/post", :collection => @published %>
             <% end %>
       			</ul>

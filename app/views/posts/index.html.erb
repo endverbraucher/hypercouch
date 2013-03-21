@@ -1,5 +1,5 @@
 <section class="m-posts">
-  <% cache @posts.first.updated_at do %>
+  <% cache @posts.first.cache_key do %>
     <% @posts[0..9].each do |post|
       	if post.url.blank? %>
       		<%= render :partial => "article", :locals => { :post => post } %>
